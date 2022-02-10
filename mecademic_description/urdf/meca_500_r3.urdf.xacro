@@ -1,4 +1,9 @@
 <robot name="meca_500_r3" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="world"/>  
+  <joint name="world" type="fixed">
+    <parent link="world"/>
+    <child link="meca_base_link"/>
+  </joint>
   <!-- Base link is the center of the robot's bottom plate -->
   <link name="meca_base_link">
     <visual>
@@ -13,6 +18,10 @@
         <mesh filename="package://mecademic_description/meshes/meca_500_r3_base_collision.stl" />
       </geometry>
     </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
   </link>
 
   <!-- Joint 1 -->
@@ -29,6 +38,10 @@
         <mesh filename="package://mecademic_description/meshes/meca_500_r3_j1_collision.stl" />
       </geometry>
     </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
   </link>
 
   <joint name="meca_axis_1_joint" type="revolute">
@@ -53,6 +66,10 @@
         <mesh filename="package://mecademic_description/meshes/meca_500_r3_j2_collision.stl" />
       </geometry>
     </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
   </link>
 
   <joint name="meca_axis_2_joint" type="revolute">
@@ -77,6 +94,10 @@
         <mesh filename="package://mecademic_description/meshes/meca_500_r3_j3_collision.stl" />
       </geometry>
     </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
   </link>
 
   <joint name="meca_axis_3_joint" type="revolute">
@@ -101,6 +122,10 @@
         <mesh filename="package://mecademic_description/meshes/meca_500_r3_j4_collision.stl" />
       </geometry>
     </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
   </link>
 
   <joint name="meca_axis_4_joint" type="revolute">
@@ -125,6 +150,10 @@
         <mesh filename="package://mecademic_description/meshes/meca_500_r3_j5_collision.stl" />
       </geometry>
     </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
   </link>
 
   <joint name="meca_axis_5_joint" type="revolute">
@@ -149,6 +178,10 @@
         <mesh filename="package://mecademic_description/meshes/meca_500_r3_j6_collision.stl" />
       </geometry>
     </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
   </link>
 
   <joint name="meca_axis_6_joint" type="revolute">
