@@ -1,0 +1,38 @@
+solver_options:
+    regularization: 1e-9
+    back_end: osqp
+    front_end: ihqp
+
+
+stack:
+    -
+      - EndEffector
+      - Postural
+
+constraints: [JointLimits, VelocityLimits, Collision]
+
+JointLimits:
+    type: JointLimits
+
+VelocityLimits:
+    type: VelocityLimits
+
+Collision:
+    type: CollisionConstraint
+    lib_name: libcartesio_collision_support.so
+    bound_scaling: 0.1
+    distance_threshold: 0.01
+    max_pairs: 10
+    collision_urdf_path: $(rospack find mecademic_description)/urdf/meca_500_r3_capsule.urdf.xacro
+    collision_srdf_path: $(rospack find mecademic_description)/srdf/meca_500_r3_capsule.srdf
+
+EndEffector:
+    type: Cartesian
+    distal_link: meca_axis_6_link
+    lambda: 0.1
+    indices: [0, 1, 2]
+
+Postural:
+    type: Postural
+    lambda: 0.01
+    weight: 0.001

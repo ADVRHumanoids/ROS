@@ -1,0 +1,92 @@
+
+List of user-set options:
+
+                                    Name   Value                used
+                acceptable_compl_inf_tol = 0.001                 yes
+              acceptable_constr_viol_tol = 1e-05                 yes
+                 acceptable_dual_inf_tol = 100                   yes
+                         acceptable_iter = 15                    yes
+               acceptable_obj_change_tol = 0.001                 yes
+                          acceptable_tol = 10                    yes
+                      bound_relax_factor = 1e-12                 yes
+                           compl_inf_tol = 1e-06                 yes
+                         constr_viol_tol = 1e-06                 yes
+                         derivative_test = first-order           yes
+            derivative_test_perturbation = 1e-07                 yes
+                            dual_inf_tol = 100000                yes
+               expect_infeasible_problem = no                    yes
+                        file_print_level = 5                     yes
+                   hessian_approximation = limited-memory        yes
+                           linear_solver = mumps                 yes
+                                max_iter = 3000                  yes
+                             mu_strategy = adaptive              yes
+                nlp_scaling_max_gradient = 100                   yes
+                      nlp_scaling_method = gradient-based        yes
+                        option_file_name =                        no
+                             output_file = fitter-ipopt.log      yes
+                             print_level = 5                     yes
+             print_options_documentation = no                    yes
+                      print_user_options = yes                   yes
+                        start_with_resto = no                    yes
+                                     tol = 0.001                 yes
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit http://projects.coin-or.org/Ipopt
+******************************************************************************
+
+This is Ipopt version 3.11.9, running with linear solver mumps.
+NOTE: Other linear solvers might be more efficient (see Ipopt documentation).
+
+Starting derivative checker for first derivatives.
+
+
+No errors detected by derivative checker.
+
+Number of nonzeros in equality constraint Jacobian...:        0
+Number of nonzeros in inequality constraint Jacobian.:      224
+Number of nonzeros in Lagrangian Hessian.............:        0
+
+Total number of variables............................:        7
+                     variables with only lower bounds:        1
+                variables with lower and upper bounds:        0
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:        0
+Total number of inequality constraints...............:       32
+        inequality constraints with only lower bounds:        0
+   inequality constraints with lower and upper bounds:        0
+        inequality constraints with only upper bounds:       32
+
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  1.0318865e-05 0.00e+00 1.00e+00   0.0 0.00e+00    -  0.00e+00 0.00e+00   0
+   1  3.8206067e-03 0.00e+00 6.25e-01  -1.1 8.27e-02    -  6.01e-01 1.00e+00f  1
+   2  4.0701317e-03 0.00e+00 2.24e-03  -2.9 2.38e-03    -  9.97e-01 1.00e+00h  1
+   3  1.4620824e-03 0.00e+00 1.43e-02  -9.4 3.45e-02    -  1.00e+00 1.00e+00h  1
+   4  4.8194617e-04 0.00e+00 7.42e-03 -10.0 2.19e-02    -  1.00e+00 1.00e+00h  1
+   5  1.7465024e-04 0.00e+00 7.71e-03 -10.6 1.36e-02    -  1.00e+00 1.00e+00h  1
+   6  5.6462566e-05 0.00e+00 3.44e-03 -11.0 1.14e-02    -  1.00e+00 1.00e+00h  1
+   7  2.1393894e-05 0.00e+00 1.46e-03 -11.0 6.85e-03    -  1.00e+00 1.00e+00h  1
+   8  1.3596328e-05 0.00e+00 2.69e-04  -6.9 2.53e-03    -  1.00e+00 1.00e+00h  1
+
+Number of Iterations....: 8
+
+                                   (scaled)                 (unscaled)
+Objective...............:   1.3596327528724421e-05    1.3596327528724421e-05
+Dual infeasibility......:   2.6876543153973967e-04    2.6876543153973967e-04
+Constraint violation....:   0.0000000000000000e+00    0.0000000000000000e+00
+Complementarity.........:   1.6523891349885343e-07    1.6523891349885343e-07
+Overall NLP error.......:   2.6876543153973967e-04    2.6876543153973967e-04
+
+
+Number of objective function evaluations             = 9
+Number of objective gradient evaluations             = 9
+Number of equality constraint evaluations            = 0
+Number of inequality constraint evaluations          = 9
+Number of equality constraint Jacobian evaluations   = 0
+Number of inequality constraint Jacobian evaluations = 9
+Number of Lagrangian Hessian evaluations             = 0
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.051
+Total CPU secs in NLP function evaluations           =      0.005
+
+EXIT: Optimal Solution Found.

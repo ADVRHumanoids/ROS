@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<robot name="/home/tree/collision_ws/src/mecademic_ros/mecademic_description/meshes/meca_500_r3_j5_collision.stl" version="1.0">
+  <link name="1.00000_1.00000_1.00000">
+    <collision>
+      <origin rpy="-1.56738494938 1.42197043963 -1.41859762505" xyz="0.022533785 0.002385127 -0.000338951"/>
+      <geometry>
+        <cylinder length="0.0337980384654" radius="0.0373293"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

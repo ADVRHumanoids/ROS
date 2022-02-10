@@ -1,0 +1,23 @@
+<launch>
+
+    <arg name="rate" default="100.0"/>
+    <arg name="prefix" default=""/>
+    <arg name="gui" default="false"/>
+    
+    <include file="$(find mecademic_description)/launch/meca_500_r3.launch"/>
+
+    <param name="cartesian/problem_description" textfile="$(find mecademic_cartesio)/config/mecademic_collision.yaml"/>
+        
+    <include file="$(find cartesian_interface)/launch/cartesio.launch">
+        <arg name="rate" value="$(arg rate)"/>
+        <arg name="prefix" value="$(arg prefix)"/>
+        <arg name="is_model_floating_base" value="false"/>
+    </include>
+
+    <node if="$(arg gui)"
+          type="rviz"
+          name="rviz"
+          pkg="rviz"
+          args="-d $(find mecademic_viz)/rviz/cartesio.rviz" />
+
+</launch>
