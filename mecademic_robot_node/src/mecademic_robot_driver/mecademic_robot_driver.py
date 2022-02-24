@@ -19,7 +19,7 @@ class MecademicRobot_Driver():
         """Constructor for the ROS MecademicRobot Driver
         """
         rospy.init_node("MecademicRobot_driver", anonymous=True)
-        self.joint_subscriber = rospy.Subscriber("MecademicRobot_joint", JointState, self.joint_callback)
+        self.joint_subscriber = rospy.Subscriber("MecademicRobot_joint", JointState, self.joint_callback, queue_size=1)
         self.pose_subscriber = rospy.Subscriber("MecademicRobot_pose", Pose, self.pose_callback)
         self.command_subscriber = rospy.Subscriber("MecademicRobot_command", String, self.command_callback)
         self.gripper_subscriber = rospy.Subscriber("MecademicRobot_gripper", Bool, self.gripper_callback)
