@@ -70,7 +70,7 @@
     <axis xyz="0.0 0.0 1.0"/>
     <parent link="meca_base_link"/>
     <child link="meca_axis_1_link"/>
-    <limit effort="10.0" lower="-3.05433" upper="3.05433" velocity="2.61799"/>
+    <limit effort="10.0" lower="-3.05" upper="3.05" velocity="2.61799"/>
   </joint>
   <link name="meca_axis_2_link">
     <visual>
@@ -107,7 +107,7 @@
     <axis xyz="0.0 1.0 0.0"/>
     <parent link="meca_axis_1_link"/>
     <child link="meca_axis_2_link"/>
-    <limit effort="10.0" lower="-1.22173048" upper="1.5708" velocity="2.61799"/>
+    <limit effort="10.0" lower="-1.22" upper="1.57" velocity="2.61799"/>
   </joint>
   <link name="meca_axis_3_link">
     <visual>
@@ -144,7 +144,7 @@
     <axis xyz="0.0 1.0 0.0"/>
     <parent link="meca_axis_2_link"/>
     <child link="meca_axis_3_link"/>
-    <limit effort="10.0" lower="-2.35619" upper="1.22173048" velocity="3.14159"/>
+    <limit effort="10.0" lower="-2.35" upper="1.22" velocity="3.14159"/>
   </joint>
   <link name="meca_axis_4_link">
     <visual>
@@ -181,7 +181,7 @@
     <axis xyz="1.0 0.0 0.0"/>
     <parent link="meca_axis_3_link"/>
     <child link="meca_axis_4_link"/>
-    <limit effort="10.0" lower="-2.96706" upper="2.96706" velocity="5.23599"/>
+    <limit effort="10.0" lower="-2.96" upper="2.96" velocity="5.23599"/>
   </joint>
   <link name="meca_axis_5_link">
     <visual>
@@ -218,7 +218,7 @@
     <axis xyz="0.0 1.0 0.0"/>
     <parent link="meca_axis_4_link"/>
     <child link="meca_axis_5_link"/>
-    <limit effort="10.0" lower="-2.00713" upper="2.00713" velocity="5.23599"/>
+    <limit effort="10.0" lower="-2.00" upper="2.00" velocity="5.23599"/>
   </joint>
   <link name="meca_axis_6_link">
     <visual>
@@ -255,6 +255,6 @@
     <axis xyz="1.0 0.0 0.0"/>
     <parent link="meca_axis_5_link"/>
     <child link="meca_axis_6_link"/>
-    <limit effort="10.0" lower="-3.14159" upper="3.14159" velocity="8.72665"/>
+    <limit effort="10.0" lower="-3.14" upper="3.14" velocity="8.72665"/>
   </joint>
 </robot>
