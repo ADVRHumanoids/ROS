@@ -24,6 +24,20 @@
     </inertial>
   </link>
 
+  <gazebo>
+      <plugin filename="libxbot2_gz_joint_server.so" name="xbot2_gz_joint_server">
+         <pid>
+            <pid name="meca_axis_1_joint" profile="small_mot"/>
+            <pid name="meca_axis_2_joint" profile="small_mot"/>
+            <pid name="meca_axis_3_joint" profile="small_mot"/>
+            <pid name="meca_axis_4_joint" profile="small_mot"/>
+            <pid name="meca_axis_5_joint" profile="small_mot"/>
+            <pid name="meca_axis_6_joint" profile="small_mot"/>
+         </pid>
+         <gain d="5" name="small_mot" p="100"/>
+      </plugin>
+   </gazebo>
+
   <!-- Joint 1 -->
   <link name="meca_axis_1_link">
     <visual>
