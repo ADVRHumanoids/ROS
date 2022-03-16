@@ -209,7 +209,7 @@
 
 <!-- 2nd ROBOT -->
   <joint name="world_B" type="fixed">
-      <origin xyz="0.3 0.3 0" rpy="0 0 0"/>
+      <origin xyz="0.2 0.25 0" rpy="0 0 0"/>
       <parent link="world"/>
       <child link="meca_base_link_B"/>
     </joint>
@@ -416,8 +416,8 @@
   </joint>
 
   <!-- BUFFERS -->
-  <joint name="world_buffer" type="fixed">
-    <origin xyz="0.15 0.1 0.1" rpy="0 0 0"/>
+  <joint name="world_to_buffer" type="fixed">
+    <origin xyz="0.1 0.1 0.1" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="buffer_base_link"/>
   </joint>
@@ -439,5 +439,56 @@
       </joint>
 
   <link name="buffer_2"/>
+
+  <!-- CANDY MILL -->
+  <joint name="world_to_mill" type="fixed">
+    <origin xyz="0.4 0.25 0.1" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="mill_base_link"/>
+  </joint>
+  
+  <link name="mill_base_link"/>   
+
+  <joint name="mill_base_to_stick" type="fixed">
+    <origin xyz="0 0 0.15" rpy="0 0 0"/>
+    <parent link="mill_base_link"/>
+    <child link="mill_stick"/>
+  </joint>
+
+  <link name="mill_stick"/>
+
+  <!-- SLIDERS -->
+  <joint name="world_to_slider" type="fixed">
+    <origin xyz="0.1 0 0.1" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="slider_base_link"/>
+  </joint>
+  
+  <link name="slider_base_link"/>   
+
+  <joint name="slider_base_to_empty" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="slider_base_link"/>
+    <child link="empty_container"/>
+  </joint>
+
+  <link name="empty_container"/>
+
+  <joint name="sliders_empty_to_lid" type="fixed">
+        <origin xyz="0.1 0.0 0" rpy="0 0 0"/>
+        <parent link="empty_container"/>
+        <child link="lid"/>
+      </joint>
+
+  <link name="lid"/>
+
+  <joint name="sliders_base_to_full" type="fixed">
+        <origin xyz="0 -0.1 0" rpy="0 0 0"/>
+        <parent link="slider_base_link"/>
+        <child link="full_container"/>
+      </joint>
+
+  <link name="full_container"/>
+
 
 </robot>
