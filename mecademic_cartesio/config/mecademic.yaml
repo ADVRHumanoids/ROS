@@ -3,20 +3,30 @@ solver_options:
     back_end: qpoases
 
 stack:
-    - [ArmPose]
+    - [meca_A, meca_B]
 
     
-constraints: [JointLimits, VelocityLimits]
+# constraints: [JointLimits, VelocityLimits]
 
-ArmPose:
+meca_A:
     type: Cartesian
-    distal_link: meca_axis_6_link
+    distal_link: meca_axis_6_link_A
+    base_link: meca_base_link_A
+    # control_mode: Velocity
     lambda: 0.1
-    name: meca
+    name: meca_A
 
-JointLimits:
-    type: JointLimits
+meca_B:
+    type: Cartesian
+    distal_link: meca_axis_6_link_B
+    base_link: meca_base_link_B
+    # control_mode: Velocity
+    lambda: 0.1
+    name: meca_B
+
+# JointLimits:
+#     type: JointLimits
 
 
-VelocityLimits:
-    type: VelocityLimits
+# VelocityLimits:
+#     type: VelocityLimits
