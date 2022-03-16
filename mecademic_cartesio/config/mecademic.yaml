@@ -3,7 +3,7 @@ solver_options:
     back_end: qpoases
 
 stack:
-    - [meca_A, meca_B]
+    - [meca_A, meca_B, Postural]
 
     
 # constraints: [JointLimits, VelocityLimits]
@@ -15,6 +15,7 @@ meca_A:
     # control_mode: Velocity
     lambda: 0.1
     name: meca_A
+    # indices: [0, 1, 2]
 
 meca_B:
     type: Cartesian
@@ -23,6 +24,7 @@ meca_B:
     # control_mode: Velocity
     lambda: 0.1
     name: meca_B
+    # indices: [0, 1, 2]
 
 # JointLimits:
 #     type: JointLimits
@@ -30,3 +32,8 @@ meca_B:
 
 # VelocityLimits:
 #     type: VelocityLimits
+
+Postural:
+    type: Postural
+    lambda: 0.01
+    weight: 0.001
