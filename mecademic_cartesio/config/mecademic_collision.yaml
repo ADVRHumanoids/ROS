@@ -5,9 +5,8 @@ solver_options:
 
 
 stack:
-    -
-      - EndEffector
-      - Postural
+    - [meca_B, meca_A]
+    - [Postural]
 
 constraints: [JointLimits, VelocityLimits, Collision]
 
@@ -26,11 +25,23 @@ Collision:
     collision_urdf_path: $(rospack find mecademic_description)/urdf/meca_500_r3_capsule.urdf.xacro
     collision_srdf_path: $(rospack find mecademic_description)/srdf/meca_500_r3_capsule.srdf
 
-EndEffector:
+meca_A:
     type: Cartesian
-    distal_link: meca_axis_6_link
+    distal_link: meca_axis_6_link_A
+    base_link: meca_base_link_A
+    # control_mode: Velocity
     lambda: 0.1
-    indices: [0, 1, 2]
+    name: meca_A
+    # indices: [0, 1, 2]
+
+meca_B:
+    type: Cartesian
+    distal_link: meca_axis_6_link_B
+    base_link: meca_base_link_B
+    # control_mode: Velocity
+    lambda: 0.1
+    name: meca_B
+    # indices: [0, 1, 2]
 
 Postural:
     type: Postural

@@ -4,5 +4,5 @@
   <param name="robot_description_capsule" command="$(find xacro)/xacro '$(find mecademic_description)/urdf/meca_500_r3_capsule.urdf.xacro' --inorder" />
 
   <param name="robot_description_semantic" command="$(find xacro)/xacro '$(find mecademic_description)/srdf/meca_500_r3.srdf' --inorder" />
-  <param name="robot_description_semantic_capsule" command="$(find xacro)/xacro '$(find mecademic_description)/srdf/meca_500_r3_capsule.srdf' --inorder" />
+  <param name="robot_description_capsule_semantic" command="$(find xacro)/xacro '$(find mecademic_description)/srdf/meca_500_r3_capsule.srdf' --inorder" />
 </launch>
