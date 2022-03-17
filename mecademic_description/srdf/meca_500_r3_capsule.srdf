@@ -14,7 +14,7 @@
     </group>
 
     <group name="arm_B">
-        <chain base_link="meca_base_link_B" tip_link="meca_axis_6_link_B" />
+        <chain base_link="base_link_B" tip_link="meca_axis_6_link_B" />
     </group>
 
     <group name="buffers">
@@ -41,6 +41,7 @@
         <joint name="meca_axis_5_joint_A" value="0" />
         <joint name="meca_axis_6_joint_A" value="1.26" />
 
+        <joint name="J1_B" value="0" />
         <joint name="meca_axis_1_joint_B" value="0" />
         <joint name="meca_axis_2_joint_B" value="0.72" />
         <joint name="meca_axis_3_joint_B" value="0" />
@@ -63,6 +64,9 @@
     <disable_collisions link1="meca_axis_4_link_A" link2="meca_axis_6_link_A" reason="Never" />
     <disable_collisions link1="meca_axis_5_link_A" link2="meca_axis_6_link_A" reason="Adjacent" />
 
+    <disable_collisions link1="L_1_B" link2="meca_axis_2_link_B" reason="Never" />
+    <disable_collisions link1="L_1_B" link2="base_link_B" reason="Adjacent" />
+    
     <disable_collisions link1="meca_axis_1_link_B" link2="meca_axis_3_link_B" reason="Never" />
     <disable_collisions link1="meca_axis_1_link_B" link2="meca_base_link_B" reason="Adjacent" />
     <disable_collisions link1="meca_axis_2_link_B" link2="meca_axis_3_link_B" reason="Adjacent" />

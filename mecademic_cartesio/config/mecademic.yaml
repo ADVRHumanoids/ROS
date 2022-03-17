@@ -20,7 +20,7 @@ meca_A:
 meca_B:
     type: Cartesian
     distal_link: meca_axis_6_link_B
-    base_link: meca_base_link_B
+    base_link: base_link_B
     # control_mode: Velocity
     lambda: 0.1
     name: meca_B
