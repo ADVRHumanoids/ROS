@@ -1,8 +1,64 @@
 <robot name="meca_500_r3" xmlns:xacro="http://ros.org/wiki/xacro">
-  <link name="world"/>  
-  <joint name="world_to_meca_A" type="fixed">
+  <link name="world"/> 
+
+  <joint name="world_to_base_A" type="fixed">
     <parent link="world"/>
+    <child link="base_link_A"/>
+    <origin rpy="0 0 0" xyz="0.3 0.0 0.0"/>
+  </joint>
+
+  <gazebo>
+      <plugin filename="libxbot2_gz_joint_server.so" name="xbot2_gz_joint_server">
+         <pid>
+            <pid name="J1_A" profile="small_mot"/>
+            <pid name="meca_axis_1_joint_A" profile="small_mot"/>
+            <pid name="meca_axis_2_joint_A" profile="small_mot"/>
+            <pid name="meca_axis_3_joint_A" profile="small_mot"/>
+            <pid name="meca_axis_4_joint_A" profile="small_mot"/>
+            <pid name="meca_axis_5_joint_A" profile="small_mot"/>
+            <pid name="meca_axis_6_joint_A" profile="small_mot"/>
+         </pid>
+         <gain d="5" name="small_mot" p="100"/>
+      </plugin>
+   </gazebo>
+
+  <link name="base_link_A">
+    <inertial>
+      <mass value="10.0"/>
+      <inertia ixx="1.0e-03" ixy="0.0" ixz="0.0" iyy="1.0e-03" iyz="0.0" izz="1.0e-03"/>
+    </inertial>
+  </link>
+
+  <joint name="fixed_L_1_A" type="fixed">
+    <parent link="base_link_A"/>
+    <child link="L_1_A"/>
+    <origin xyz="0.0 0.0 0.05" rpy="0 0 0" />
+  </joint>
+
+  <link name="L_1_A">
+    <visual>
+      <geometry>
+        <box size="0.6 0.1 0.1"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+      <origin xyz="0 0 0.0" rpy="0 0 0" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.6 0.1 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="J1_A" type="prismatic">
+    <axis xyz="0 1 0"/>
+    <parent link="L_1_A"/>
     <child link="meca_base_link_A"/>
+    <limit effort="1000.0" lower="-0.3" upper="0.3" velocity="100"/>
+    <origin rpy="0 1.571 1.571" xyz="0 0.05 0.1"/>
   </joint>
 
   <!-- Base link is the center of the robot's bottom plate -->
@@ -24,20 +80,6 @@
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
   </link>
-
-  <gazebo>
-      <plugin filename="libxbot2_gz_joint_server.so" name="xbot2_gz_joint_server">
-         <pid>
-            <pid name="meca_axis_1_joint_A" profile="small_mot"/>
-            <pid name="meca_axis_2_joint_A" profile="small_mot"/>
-            <pid name="meca_axis_3_joint_A" profile="small_mot"/>
-            <pid name="meca_axis_4_joint_A" profile="small_mot"/>
-            <pid name="meca_axis_5_joint_A" profile="small_mot"/>
-            <pid name="meca_axis_6_joint_A" profile="small_mot"/>
-         </pid>
-         <gain d="5" name="small_mot" p="100"/>
-      </plugin>
-   </gazebo>
 
   <!-- Joint 1 -->
   <link name="meca_axis_1_link_A">
@@ -209,8 +251,8 @@
 
 
 <!-- 2nd ROBOT -->
-  <joint name="world_to_meca_B" type="fixed">
-      <origin xyz="0.2 0.3 0" rpy="0 0 0"/>
+  <joint name="world_to_base_B" type="fixed">
+      <origin xyz="0.3 0.6 0" rpy="0 0 0"/>
       <parent link="world"/>
       <child link="base_link_B"/>
     </joint>
@@ -240,7 +282,7 @@
   <joint name="J1_B" type="revolute">
     <axis xyz="0 0 1"/>
     <limit effort="1000.0" lower="-6.28" upper="6.28" velocity="100"/>
-    <origin rpy="0 0 0" xyz="0.0 0.0 0.05"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.075"/>
     <parent link="base_link_B"/>
     <child link="L_1_B"/>
   </joint>
@@ -248,7 +290,7 @@
   <link name="L_1_B">
     <visual>
       <geometry>
-        <cylinder length="0.1" radius="0.1"/>
+        <cylinder length="0.15" radius="0.1"/>
       </geometry>
       <material name="blue">
         <color rgba="0 0 .8 1"/>
@@ -257,7 +299,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <cylinder length="0.1" radius="0.1"/>
+        <cylinder length="0.15" radius="0.1"/>
       </geometry>
     </collision>
   </link>
@@ -265,7 +307,7 @@
   <joint name="L_1_B_to_meca_base_link_B" type="fixed">
     <parent link="L_1_B"/>
     <child link="meca_base_link_B"/>
-    <origin rpy="0 0.7854 0" xyz="0.0 0.0 0.1"/>
+    <origin rpy="0 1.571 0" xyz="0.05 0.0 0.125"/>
   </joint>
 
     <!-- Base link is the center of the robot's bottom plate -->
@@ -458,7 +500,7 @@
 
   <!-- BUFFERS -->
   <joint name="world_to_buffer" type="fixed">
-    <origin xyz="0.2 0.1 0.1" rpy="0 0 0"/>
+    <origin xyz="0.2 0.25 0" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="buffer_base_link"/>
   </joint>
@@ -474,7 +516,7 @@
   <link name="buffer_1"/>
 
   <joint name="buffer_base_to_2" type="fixed">
-        <origin xyz="0.1 0.0 0" rpy="0 0 0"/>
+        <origin xyz="0.15 0.0 0" rpy="0 0 0"/>
         <parent link="buffer_base_link"/>
         <child link="buffer_2"/>
       </joint>
@@ -483,7 +525,7 @@
 
   <!-- CANDY MILL -->
   <joint name="world_to_mill" type="fixed">
-    <origin xyz="0.45 0.3 0.1" rpy="0 0 0"/>
+    <origin xyz="0.65 0.6 0" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="mill_base_link"/>
   </joint>
@@ -491,7 +533,7 @@
   <link name="mill_base_link"/>   
 
   <joint name="mill_base_to_stick" type="fixed">
-    <origin xyz="0 0 0.15" rpy="0 0 0"/>
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
     <parent link="mill_base_link"/>
     <child link="mill_stick"/>
   </joint>
@@ -500,7 +542,7 @@
 
   <!-- SLIDERS -->
   <joint name="world_to_slider" type="fixed">
-    <origin xyz="0.2 0 0.1" rpy="0 0 0"/>
+    <origin xyz="0 0.15 0" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="slider_base_link"/>
   </joint>
@@ -516,7 +558,7 @@
   <link name="empty_container"/>
 
   <joint name="sliders_base_to_lid" type="fixed">
-        <origin xyz="0.1 0.0 0" rpy="0 0 0"/>
+        <origin xyz="0.0 0.2 0" rpy="0 0 0"/>
         <parent link="slider_base_link"/>
         <child link="lid"/>
       </joint>
@@ -524,7 +566,7 @@
   <link name="lid"/>
 
   <joint name="sliders_base_to_full" type="fixed">
-        <origin xyz="0 -0.1 0" rpy="0 0 0"/>
+        <origin xyz="0.6 0 0" rpy="0 0 0"/>
         <parent link="slider_base_link"/>
         <child link="full_container"/>
       </joint>

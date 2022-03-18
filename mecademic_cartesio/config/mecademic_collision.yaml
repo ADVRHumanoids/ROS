@@ -5,7 +5,8 @@ solver_options:
 
 
 stack:
-    - [meca_B, meca_A]
+    - [meca_B]
+    - [meca_A]
     - [Postural]
 
 constraints: [JointLimits, VelocityLimits, Collision]
@@ -28,7 +29,7 @@ Collision:
 meca_A:
     type: Cartesian
     distal_link: meca_axis_6_link_A
-    base_link: meca_base_link_A
+    base_link: base_link_A
     # control_mode: Velocity
     lambda: 0.1
     name: meca_A
