@@ -31,34 +31,59 @@
 
   <joint name="fixed_L_1_A" type="fixed">
     <parent link="base_link_A"/>
-    <child link="L_1_A"/>
-    <origin xyz="0.0 0.0 0.05" rpy="0 0 0" />
+    <child link="L_1_A_stator"/>
+    <origin xyz="0.0 0.0 0.06" rpy="0 0 0" />
   </joint>
 
-  <link name="L_1_A">
+
+  <link name="L_1_A_stator">
     <visual>
       <geometry>
-        <box size="0.6 0.1 0.1"/>
+        <box size="0.72 0.12 0.1"/>
       </geometry>
       <material name="blue">
         <color rgba="0 0 .8 1"/>
       </material>
-      <origin xyz="0 0 0.0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.6 0.1 0.1"/>
+        <box size="0.72 0.12 0.1"/>
       </geometry>
     </collision>
   </link>
 
   <joint name="J1_A" type="prismatic">
-    <axis xyz="0 1 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="L_1_A_stator"/>
+    <child link="L_1_A"/>
+    <limit effort="1000.0" lower="-0.3" upper="0.3" velocity="100"/>
+    <origin rpy="0 0 0" xyz="0 0 0.09"/>
+  </joint>
+
+  <link name="L_1_A">
+    <visual>
+      <geometry>
+        <box size="0.2 0.2 0.04"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+      <origin xyz="0 0 -0.02" rpy="0 0 0" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.02" rpy="0 0 0" />
+      <geometry>
+        <box size="0.2 0.2 0.04"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="L_1_A_to_meca_base_link_A" type="fixed">
     <parent link="L_1_A"/>
     <child link="meca_base_link_A"/>
-    <limit effort="1000.0" lower="-0.3" upper="0.3" velocity="100"/>
-    <origin rpy="0 2.356 1.571" xyz="0 0.05 0.1"/>
+    <origin rpy="0 1.571 1.571" xyz="0.0 0.05 0.05"/>
   </joint>
 
   <!-- Base link is the center of the robot's bottom plate -->
