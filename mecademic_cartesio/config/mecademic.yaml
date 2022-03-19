@@ -3,7 +3,8 @@ solver_options:
     back_end: qpoases
 
 stack:
-    - [meca_A, meca_B]
+    - [meca_B]
+    - [meca_A]
     - [Postural]
 
 constraints: [JointLimits, VelocityLimits]
