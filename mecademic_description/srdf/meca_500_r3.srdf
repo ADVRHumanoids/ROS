@@ -52,7 +52,7 @@
     </group_state>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="L_1_A" link2="meca_axis_2_link_A" reason="Never" />
-    <disable_collisions link1="L_1_A" link2="base_link_A" reason="Adjacent" />
+    <disable_collisions link1="L_1_A" link2="L_1_A_stator" reason="Adjacent" />
     
     <disable_collisions link1="meca_axis_1_link_A" link2="meca_axis_3_link_A" reason="Never" />
     <disable_collisions link1="meca_axis_1_link_A" link2="meca_base_link_A" reason="Adjacent" />
