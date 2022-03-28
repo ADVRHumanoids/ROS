@@ -131,7 +131,7 @@
     <parent link="meca_base_link_A" />
     <child link="meca_axis_1_link_A" />
     <axis xyz="0 0 1" />
-    <limit effort="10.0" velocity="2.61799" lower="-3.05433" upper="3.05433" />
+   <limit effort="10.0" velocity="2.61799" lower="-3.05" upper="3.05" />
   </joint>
 
   <!-- Joint 2 -->
@@ -159,7 +159,7 @@
     <parent link="meca_axis_1_link_A" />
     <child link="meca_axis_2_link_A" />
     <axis xyz="0 1 0" />
-    <limit effort="10.0" velocity="2.61799" lower="-1.22173048" upper="1.5708" />
+    <limit effort="10.0" velocity="2.61799" lower="-1.22" upper="1.57" />
   </joint>
 
   <!-- Joint 3 -->
@@ -187,7 +187,7 @@
     <parent link="meca_axis_2_link_A" />
     <child link="meca_axis_3_link_A" />
     <axis xyz="0 1 0" />
-    <limit effort="10.0" velocity="3.14159" lower="-2.35619" upper="1.22173048" />
+    <limit effort="10.0" velocity="3.14159" lower="-2.35" upper="1.22" />
   </joint>
 
   <!-- Joint 4 -->
@@ -215,7 +215,7 @@
     <parent link="meca_axis_3_link_A" />
     <child link="meca_axis_4_link_A" />
     <axis xyz="1 0 0" />
-    <limit effort="10.0" velocity="5.23599" lower="-2.96706" upper="2.96706" />
+    <limit effort="10.0" velocity="5.23599" lower="-2.96" upper="2.96" />
   </joint>
 
   <!-- Joint 5 -->
@@ -243,7 +243,7 @@
     <parent link="meca_axis_4_link_A" />
     <child link="meca_axis_5_link_A" />
     <axis xyz="0 1 0" />
-    <limit effort="10.0" velocity="5.23599" lower="-2.00713" upper="2.00713" />
+    <limit effort="10.0" velocity="5.23599" lower="-2.00" upper="2.00" />
   </joint>
 
   <!-- Joint 6 -->
@@ -271,7 +271,7 @@
     <parent link="meca_axis_5_link_A" />
     <child link="meca_axis_6_link_A" />
     <axis xyz="1 0 0" />
-    <limit effort="10.0" velocity="8.72665" lower="-4.712" upper="4.712" />
+    <limit effort="10.0" velocity="8.72665" lower="-3.142" upper="3.142" />
   </joint>
 
 
@@ -437,7 +437,7 @@
     <parent link="meca_base_link_B" />
     <child link="meca_axis_1_link_B" />
     <axis xyz="0 0 1" />
-    <limit effort="10.0" velocity="2.61799" lower="-3.05433" upper="3.05433" />
+    <limit effort="10.0" velocity="2.61799" lower="-3.05" upper="3.05" />
   </joint>
 
   <!-- Joint 2 -->
@@ -465,7 +465,7 @@
     <parent link="meca_axis_1_link_B" />
     <child link="meca_axis_2_link_B" />
     <axis xyz="0 1 0" />
-    <limit effort="10.0" velocity="2.61799" lower="-1.22173048" upper="1.5708" />
+    <limit effort="10.0" velocity="2.61799" lower="-1.22" upper="1.57" />
   </joint>
 
   <!-- Joint 3 -->
@@ -493,7 +493,7 @@
     <parent link="meca_axis_2_link_B" />
     <child link="meca_axis_3_link_B" />
     <axis xyz="0 1 0" />
-    <limit effort="10.0" velocity="3.14159" lower="-2.35619" upper="1.22173048" />
+    <limit effort="10.0" velocity="3.14159" lower="-2.35" upper="1.22" />
   </joint>
 
   <!-- Joint 4 -->
@@ -521,7 +521,7 @@
     <parent link="meca_axis_3_link_B" />
     <child link="meca_axis_4_link_B" />
     <axis xyz="1 0 0" />
-    <limit effort="10.0" velocity="5.23599" lower="-2.96706" upper="2.96706" />
+    <limit effort="10.0" velocity="5.23599" lower="-2.96" upper="2.96" />
   </joint>
 
   <!-- Joint 5 -->
@@ -549,7 +549,7 @@
     <parent link="meca_axis_4_link_B" />
     <child link="meca_axis_5_link_B" />
     <axis xyz="0 1 0" />
-    <limit effort="10.0" velocity="5.23599" lower="-2.00713" upper="2.00713" />
+    <limit effort="10.0" velocity="5.23599" lower="-2.00" upper="2.00" />
   </joint>
 
   <!-- Joint 6 -->
@@ -577,7 +577,7 @@
     <parent link="meca_axis_5_link_B" />
     <child link="meca_axis_6_link_B" />
     <axis xyz="1 0 0" />
-    <limit effort="10.0" velocity="8.72665" lower="-4.712" upper="4.712" />
+    <limit effort="10.0" velocity="8.72665" lower="-3.142" upper="3.142" />
   </joint>
 
   <!-- BUFFERS -->

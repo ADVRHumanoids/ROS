@@ -149,13 +149,12 @@
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
   </link>
-
   <joint name="meca_axis_1_joint_A" type="revolute">
-    <origin xyz="0.012498 0 0.091" rpy="0 0 0" />
-    <parent link="meca_base_link_A" />
-    <child link="meca_axis_1_link_A" />
-    <axis xyz="0 0 1" />
-    <limit effort="10.0" velocity="2.61799" lower="-3.05433" upper="3.05433" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.012498 0.0 0.091"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="meca_base_link_A"/>
+    <child link="meca_axis_1_link_A"/>
+    <limit effort="10.0" lower="-3.05" upper="3.05" velocity="2.61799"/>
   </joint>
 
   <!-- Joint 2 -->
@@ -189,13 +188,12 @@
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
   </link>
-
   <joint name="meca_axis_2_joint_A" type="revolute">
-    <origin xyz="0 0 0.044" rpy="0 0 0" />
-    <parent link="meca_axis_1_link_A" />
-    <child link="meca_axis_2_link_A" />
-    <axis xyz="0 1 0" />
-    <limit effort="10.0" velocity="2.61799" lower="-1.22173048" upper="1.5708" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.044"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="meca_axis_1_link_A"/>
+    <child link="meca_axis_2_link_A"/>
+    <limit effort="10.0" lower="-1.22" upper="1.57" velocity="2.61799"/>
   </joint>
 
   <!-- Joint 3 -->
@@ -229,13 +227,12 @@
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
   </link>
-
   <joint name="meca_axis_3_joint_A" type="revolute">
-    <origin xyz="0 0 0.135" rpy="0 0 0" />
-    <parent link="meca_axis_2_link_A" />
-    <child link="meca_axis_3_link_A" />
-    <axis xyz="0 1 0" />
-    <limit effort="10.0" velocity="3.14159" lower="-2.35619" upper="1.22173048" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.135"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="meca_axis_2_link_A"/>
+    <child link="meca_axis_3_link_A"/>
+    <limit effort="10.0" lower="-2.35" upper="1.22" velocity="3.14159"/>
   </joint>
 
   <!-- Joint 4 -->
@@ -269,13 +266,12 @@
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
   </link>
-
   <joint name="meca_axis_4_joint_A" type="revolute">
-    <origin xyz="0 0 0.038" rpy="0 0 0" />
-    <parent link="meca_axis_3_link_A" />
-    <child link="meca_axis_4_link_A" />
-    <axis xyz="1 0 0" />
-    <limit effort="10.0" velocity="5.23599" lower="-2.96706" upper="2.96706" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.038"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="meca_axis_3_link_A"/>
+    <child link="meca_axis_4_link_A"/>
+    <limit effort="10.0" lower="-2.96" upper="2.96" velocity="5.23599"/>
   </joint>
 
   <!-- Joint 5 -->
@@ -309,13 +305,12 @@
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
   </link>
-
   <joint name="meca_axis_5_joint_A" type="revolute">
-    <origin xyz="0.12 0 0" rpy="0 0 0" />
-    <parent link="meca_axis_4_link_A" />
-    <child link="meca_axis_5_link_A" />
-    <axis xyz="0 1 0" />
-    <limit effort="10.0" velocity="5.23599" lower="-2.00713" upper="2.00713" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.12 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="meca_axis_4_link_A"/>
+    <child link="meca_axis_5_link_A"/>
+    <limit effort="10.0" lower="-2.00" upper="2.00" velocity="5.23599"/>
   </joint>
 
   <!-- Joint 6 -->
@@ -349,17 +344,15 @@
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
   </link>
-
   <joint name="meca_axis_6_joint_A" type="revolute">
-    <origin xyz="0.07 0 0" rpy="0 0 0" />
-    <parent link="meca_axis_5_link_A" />
-    <child link="meca_axis_6_link_A" />
-    <axis xyz="1 0 0" />
-    <limit effort="10.0" velocity="8.72665" lower="-4.712" upper="4.712" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.07 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="meca_axis_5_link_A"/>
+    <child link="meca_axis_6_link_A"/>
+    <limit effort="10.0" lower="-3.142" upper="3.142" velocity="8.72665"/>
   </joint>
 
-
-<!-- 2nd ROBOT -->
+  <!-- 2nd ROBOT -->
  <joint name="world_to_base_B" type="fixed">
     <origin xyz="0.3 0.65 0" rpy="0 0 0"/>
     <parent link="world"/>
@@ -560,7 +553,7 @@
     <parent link="meca_base_link_B" />
     <child link="meca_axis_1_link_B" />
     <axis xyz="0 0 1" />
-    <limit effort="10.0" velocity="2.61799" lower="-3.05433" upper="3.05433" />
+    <limit effort="10.0" lower="-3.05" upper="3.05" velocity="2.61799"/>
   </joint>
 
   <!-- Joint 2 -->
@@ -600,7 +593,7 @@
     <parent link="meca_axis_1_link_B" />
     <child link="meca_axis_2_link_B" />
     <axis xyz="0 1 0" />
-    <limit effort="10.0" velocity="2.61799" lower="-1.22173048" upper="1.5708" />
+    <limit effort="10.0" lower="-1.22" upper="1.57" velocity="2.61799"/>
   </joint>
 
   <!-- Joint 3 -->
@@ -640,7 +633,7 @@
     <parent link="meca_axis_2_link_B" />
     <child link="meca_axis_3_link_B" />
     <axis xyz="0 1 0" />
-    <limit effort="10.0" velocity="3.14159" lower="-2.35619" upper="1.22173048" />
+    <limit effort="10.0" lower="-2.35" upper="1.22" velocity="3.14159"/>
   </joint>
 
   <!-- Joint 4 -->
@@ -680,7 +673,7 @@
     <parent link="meca_axis_3_link_B" />
     <child link="meca_axis_4_link_B" />
     <axis xyz="1 0 0" />
-    <limit effort="10.0" velocity="5.23599" lower="-2.96706" upper="2.96706" />
+   <limit effort="10.0" lower="-2.96" upper="2.96" velocity="5.23599"/>
   </joint>
 
   <!-- Joint 5 -->
@@ -720,7 +713,7 @@
     <parent link="meca_axis_4_link_B" />
     <child link="meca_axis_5_link_B" />
     <axis xyz="0 1 0" />
-    <limit effort="10.0" velocity="5.23599" lower="-2.00713" upper="2.00713" />
+    <limit effort="10.0" lower="-2.00" upper="2.00" velocity="5.23599"/>
   </joint>
 
   <!-- Joint 6 -->
@@ -760,7 +753,7 @@
     <parent link="meca_axis_5_link_B" />
     <child link="meca_axis_6_link_B" />
     <axis xyz="1 0 0" />
-    <limit effort="10.0" velocity="8.72665" lower="-4.712" upper="4.712" />
+    <limit effort="10.0" lower="-3.142" upper="3.142" velocity="8.72665"/>
   </joint>
 
   <!-- BUFFERS -->
