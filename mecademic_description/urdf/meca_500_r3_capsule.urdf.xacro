@@ -838,5 +838,30 @@
 
   <link name="full_container"/>
 
+  <!-- FLOOR -->
+  <joint name="world_to_floor" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="floor_link"/>
+  </joint>
+
+  <link name="floor_link">
+    <visual>
+      <geometry>
+        <box size="2 2 0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.232 0.232 0.232 1"/>
+      </material>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="2 2 0"/>
+      </geometry>
+    </collision>
+  </link>
+
 
 </robot>
