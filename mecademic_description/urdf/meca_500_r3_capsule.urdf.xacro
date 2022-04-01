@@ -94,7 +94,7 @@
     <axis rpy="0 0 0" xyz="0 0 1"/>
     <parent link="BL4104C_1_stator"/>
     <child link="L_1_B"/>
-    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.21"/>
+    <origin rpy="0.0 -0.0 -1.57" xyz="0.0 0.0 0.21"/>
     <limit effort="147" lower="-2.0" upper="2.0" velocity="1"/>
   </joint>
   <!-- <xacro:property name="visual" value="package://sps-pkg/database/modular/meshes/yaw_base.stl"/> -->
@@ -139,7 +139,7 @@
   <joint name="L_1_B_to_meca_base_link_B" type="fixed">
     <parent link="L_1_B"/>
     <child link="meca_base_link_B"/>
-    <origin rpy="0 1.571 0" xyz="0.05 0.0 0.05"/>
+    <origin rpy="0 1.571 0" xyz="0.05 0.0 0.065"/>
   </joint>
 
     <!-- Base link is the center of the robot's bottom plate -->
