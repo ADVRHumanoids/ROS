@@ -24,8 +24,7 @@ class MecademicRobot_Driver():
         self.joint_subscriber = rospy.Subscriber("MecademicRobot_joint", JointState, self.joint_callback, queue_size=1)
         # self.pose_subscriber = rospy.Subscriber("MecademicRobot_pose", Pose, self.pose_callback)
         # self.command_subscriber = rospy.Subscriber("MecademicRobot_command", String, self.command_callback)
-        # self.gripper_subscriber = rospy.Subscriber("MecademicRobot_gripper", Bool, self.gripper_callback)
-        # self.dummy_subscriber = rospy.Subscriber("MecademicRobot_dummy", Bool, self.dummy_callback)
+        self.gripper_subscriber = rospy.Subscriber("MecademicRobot_gripper", Bool, self.gripper_callback)
         self.reply_publisher = rospy.Publisher("MecademicRobot_reply", String, queue_size=1)
         self.joint_publisher = rospy.Publisher("MecademicRobot_joint_fb", JointState, queue_size=1)
         self.pose_publisher = rospy.Publisher("MecademicRobot_pose_fb", Pose, queue_size=1)
@@ -130,30 +129,21 @@ class MecademicRobot_Driver():
     #     if reply is not None:
     #         self.reply_publisher.publish(reply)
 
-    # def gripper_callback(self, state):
-    #     """Controls whether to open or close the gripper.
-    #     True for open, False for close
+    def gripper_callback(self, state):
+        """Controls whether to open or close the gripper.
+        True for open, False for close
 
-    #     :param state: ROS Bool message
-    #     """
-    #     while not self.socket_available:  # wait for socket to be available
-    #         pass
-    #     self.socket_available = False  # Block other processes from using the socket
-    #     if self.robot.is_in_error():
-    #         self.robot.ResetError()
-    #         self.robot.ResumeMotion()
-    #     if state.data:
-    #         reply = self.robot.GripperOpen()
-    #     else:
-    #         reply = self.robot.GripperClose()
-    #     self.socket_available = True  # Release socket so other processes can use it
-    #     if reply is not None:
-    #         self.reply_publisher.publish(reply)
-
-    def dummy_callback(self, state):
-        """dummy callback
+        :param state: ROS Bool message
         """
-        self.reply_publisher.publish("received")
+        # Attempt to clear error if robot is in error.
+        if self.robot.GetStatusRobot().error_status:
+            # self.robot.ClearMotion()
+            self.robot.ResetError()
+            self.robot.ResumeMotion()
+        if state.data:
+            self.robot.GripperOpen()
+        else:
+            self.robot.GripperClose()
 
     def feedbackLoop(self, event=None):
         """Retrieves live position feedback and publishes the data 
