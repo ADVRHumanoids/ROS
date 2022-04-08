@@ -411,7 +411,7 @@
     <parent link="meca_axis_5_link_B" />
     <child link="meca_axis_6_link_B" />
     <axis xyz="1 0 0" />
-    <limit effort="10.0" lower="-3.142" upper="3.142" velocity="8.72665"/>
+    <limit effort="10.0" lower="-4.0" upper="4.0" velocity="8.72665"/>
   </joint>
 
   <!-- BUFFERS -->
