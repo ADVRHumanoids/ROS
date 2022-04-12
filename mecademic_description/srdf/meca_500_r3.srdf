@@ -50,19 +50,34 @@
         <joint name="meca_axis_6_joint_A" value="0.0" />
     </group_state>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
-    <disable_collisions link1="BL4104C_1_stator" link2="L_1_B" reason="Adjacent" />
-    <disable_collisions link1="L_1_B" link2="meca_axis_2_link_B" reason="Never" />
-    <disable_collisions link1="L_1_B" link2="base_link_B" reason="Adjacent" />
+    <disable_collisions link1="L_1_A" link2="BL4104C_1_stator" reason="Adjacent" />
+    
+    <disable_collisions link1="meca_axis_1_link_A" link2="meca_axis_3_link_A" reason="Never" />
+    <disable_collisions link1="meca_axis_1_link_A" link2="meca_base_link_A" reason="Adjacent" />
+    <disable_collisions link1="meca_axis_2_link_A" link2="meca_axis_3_link_A" reason="Adjacent" />
+    <disable_collisions link1="meca_axis_2_link_A" link2="meca_axis_4_link_A" reason="Default" />
+    <disable_collisions link1="meca_axis_1_link_A" link2="meca_axis_2_link_A" reason="Adjacent" />
+    <disable_collisions link1="meca_axis_2_link_A" link2="meca_base_link_A" reason="Default" />
+    <disable_collisions link1="meca_axis_3_link_A" link2="meca_axis_4_link_A" reason="Adjacent" />
+    <disable_collisions link1="meca_axis_3_link_A" link2="meca_axis_5_link_A" reason="Never" />
+    <disable_collisions link1="meca_axis_3_link_A" link2="meca_axis_6_link_A" reason="Never" />
+    <disable_collisions link1="meca_axis_3_link_A" link2="meca_base_link_A" reason="Never" />
+    <disable_collisions link1="meca_axis_4_link_A" link2="meca_axis_5_link_A" reason="Adjacent" />
+    <disable_collisions link1="meca_axis_4_link_A" link2="meca_axis_6_link_A" reason="Never" />
+    <disable_collisions link1="meca_axis_5_link_A" link2="meca_axis_6_link_A" reason="Adjacent" />
+
+    <disable_collisions link1="L_1_B" link2="BL4104C_2_stator" reason="Adjacent" />
     
     <disable_collisions link1="meca_axis_1_link_B" link2="meca_axis_3_link_B" reason="Never" />
     <disable_collisions link1="meca_axis_1_link_B" link2="meca_base_link_B" reason="Adjacent" />
     <disable_collisions link1="meca_axis_2_link_B" link2="meca_axis_3_link_B" reason="Adjacent" />
-    <disable_collisions link1="meca_axis_2_link_B" link2="meca_base_link_B" reason="Never" />
+    <disable_collisions link1="meca_axis_2_link_B" link2="meca_axis_4_link_B" reason="Default" />
+    <disable_collisions link1="meca_axis_1_link_B" link2="meca_axis_2_link_B" reason="Adjacent" />
+    <disable_collisions link1="meca_axis_2_link_B" link2="meca_base_link_B" reason="Default" />
     <disable_collisions link1="meca_axis_3_link_B" link2="meca_axis_4_link_B" reason="Adjacent" />
     <disable_collisions link1="meca_axis_3_link_B" link2="meca_axis_5_link_B" reason="Never" />
     <disable_collisions link1="meca_axis_3_link_B" link2="meca_axis_6_link_B" reason="Never" />
     <disable_collisions link1="meca_axis_3_link_B" link2="meca_base_link_B" reason="Never" />
-    <disable_collisions link1="meca_axis_1_link_B" link2="meca_axis_2_link_B" reason="Adjacent" />
     <disable_collisions link1="meca_axis_4_link_B" link2="meca_axis_5_link_B" reason="Adjacent" />
     <disable_collisions link1="meca_axis_4_link_B" link2="meca_axis_6_link_B" reason="Never" />
     <disable_collisions link1="meca_axis_5_link_B" link2="meca_axis_6_link_B" reason="Adjacent" />
