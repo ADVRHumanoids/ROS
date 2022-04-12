@@ -14,6 +14,7 @@
     <arg name="namespace" default=""/> <!-- dummy argument avoids pass_all_args error in parent launch file -->
     <arg name="robot" default=""/>
     <arg name="is_model_floating_base" default="false"/>
+    <arg name="gui" default="false"/>
        
     
     <node pkg="cartesian_interface" type="ros_server_node" 
@@ -36,4 +37,9 @@
         <param name="tf_prefix" value="$(arg tf_prefix)"/>
     </node>
 
+    <node if="$(arg gui)"
+          type="rviz"
+          name="rviz"
+          pkg="rviz"
+          args="-d $(find mecademic_viz)/rviz/cartesio.rviz" />
 </launch>
