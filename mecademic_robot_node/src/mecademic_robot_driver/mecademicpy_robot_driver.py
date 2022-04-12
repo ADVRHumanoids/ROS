@@ -17,18 +17,22 @@ class MecademicRobot_Driver():
         MecademicRobot : driver to control the MecademicRobot Robot
     """
 
-    def __init__(self, robot):  # , feedback):
+    def __init__(self, robot, name='meca'):  # , feedback):
         """Constructor for the ROS MecademicRobot Driver
         """
-        rospy.init_node("MecademicRobot_driver", anonymous=True)
-        self.joint_subscriber = rospy.Subscriber("MecademicRobot_joint", JointState, self.joint_callback, queue_size=1)
-        # self.pose_subscriber = rospy.Subscriber("MecademicRobot_pose", Pose, self.pose_callback)
-        # self.command_subscriber = rospy.Subscriber("MecademicRobot_command", String, self.command_callback)
-        self.gripper_subscriber = rospy.Subscriber("MecademicRobot_gripper", Bool, self.gripper_callback)
-        self.reply_publisher = rospy.Publisher("MecademicRobot_reply", String, queue_size=1)
-        self.joint_publisher = rospy.Publisher("MecademicRobot_joint_fb", JointState, queue_size=1)
-        self.pose_publisher = rospy.Publisher("MecademicRobot_pose_fb", Pose, queue_size=1)
-        self.status_publisher = rospy.Publisher("MecademicRobot_status", UInt8MultiArray, queue_size=1)
+        rospy.init_node(name, anonymous=True)
+
+        robot_ns = name
+
+        self.joint_subscriber = rospy.Subscriber(robot_ns + "/joint_command", JointState, self.joint_callback, queue_size=1)
+        # self.pose_subscriber = rospy.Subscriber(robot_ns + "/pose_reference", Pose, self.pose_callback)
+        # self.command_subscriber = rospy.Subscriber(robot_ns + "/custom_command", String, self.command_callback)
+        self.gripper_subscriber = rospy.Subscriber(robot_ns + "/gripper_command", Bool, self.gripper_callback)
+
+        self.reply_publisher = rospy.Publisher(robot_ns + "/reply", String, queue_size=1)
+        self.joint_publisher = rospy.Publisher(robot_ns + "/joint_states", JointState, queue_size=1)
+        self.pose_publisher = rospy.Publisher(robot_ns + "/pose", Pose, queue_size=1)
+        self.status_publisher = rospy.Publisher(robot_ns + "/status", UInt8MultiArray, queue_size=1)
 
         robot.logger = logging.getLogger(f'rosout.{__name__}')
 
@@ -42,11 +46,8 @@ class MecademicRobot_Driver():
 
         print(self.robot._monitoring_interval)
 
-        # self.feedback = feedback
-
         self.socket_available = True
 
-        # self.feedbackLoop()
 
     def __del__(self):
         """Deconstructor for the Mecademic Robot ROS driver
@@ -55,6 +56,7 @@ class MecademicRobot_Driver():
         self.robot.WaitIdle()
         self.robot.DeactivateRobot()
         self.robot.Disconnect()
+
 
     # def command_callback(self, command):
     #     """Forwards a ascii command to the Mecademic Robot
@@ -71,6 +73,7 @@ class MecademicRobot_Driver():
     #     self.socket_available = True  # Release socket so other processes can use it
     #     if reply is not None:
     #         self.reply_publisher.publish(reply)
+
 
     def joint_callback(self, joints):
         """Callback when the MecademicRobot_emit topic receives a message
@@ -149,33 +152,29 @@ class MecademicRobot_Driver():
         """Retrieves live position feedback and publishes the data 
         to its corresponding topic. (infinite loop)
         """
-        # while not rospy.is_shutdown():
         try:
             # Robot Status Feedback
-            if True:  # self.socket_available:
-                # self.socket_available = False  # Block other operations from using the socket while in use
-                robot_status = self.robot.GetStatusRobot()
-                gripper_status = self.robot.GetStatusGripper()
-                # self.socket_available = True  # Release the socket so other processes can happen
-                status = UInt8MultiArray()
-                status.data = [
-                    robot_status.activation_state,
-                    robot_status.homing_state,
-                    robot_status.simulation_mode,
-                    robot_status.error_status,
-                    robot_status.pause_motion_status,
-                    robot_status.end_of_block_status,
-                    # robot_status["EOM"],  # Removed from current API version
+            robot_status = self.robot.GetStatusRobot()
+            gripper_status = self.robot.GetStatusGripper()
+            status = UInt8MultiArray()
+            status.data = [
+                robot_status.activation_state,
+                robot_status.homing_state,
+                robot_status.simulation_mode,
+                robot_status.error_status,
+                robot_status.pause_motion_status,
+                robot_status.end_of_block_status,
+                # robot_status["EOM"],  # Removed from current API version
 
-                    # The values of the gripper_status object are all zero at the moment. Probably due to the FW version
-                    gripper_status.present,
-                    gripper_status.homing_state,
-                    gripper_status.holding_part,
-                    gripper_status.target_pos_reached,
-                    gripper_status.error_status,
-                    gripper_status.overload_error
-                ]
-                self.status_publisher.publish(status)
+                # The values of the gripper_status object are all zero at the moment. Probably due to the FW version
+                gripper_status.present,
+                gripper_status.homing_state,
+                gripper_status.holding_part,
+                gripper_status.target_pos_reached,
+                gripper_status.error_status,
+                gripper_status.overload_error
+            ]
+            self.status_publisher.publish(status)
 
             # Position Feedback
             rt_data = robot.GetRobotRtData()
@@ -281,7 +280,7 @@ if __name__ == "__main__":
 
     robot.ActivateRobot()
     robot.Home()
-    driver = MecademicRobot_Driver(robot)
+    driver = MecademicRobot_Driver(robot, name='mecademic_ros_device_B')
     timer = rospy.Timer(rospy.Duration(0.005), driver.feedbackLoop)
     while not rospy.is_shutdown():
         # driver.feedbackLoop()
