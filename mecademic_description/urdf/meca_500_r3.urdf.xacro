@@ -54,13 +54,13 @@
     </inertial>
   </link>
 
-  <joint name="fixed_BL4104C_1" type="fixed">
+  <joint name="fixed_linear_motor" type="fixed">
     <axis rpy="0 0 0" xyz="0 0 1"/>
     <parent link="base_link_A"/>
-    <child link="BL4104C_1_stator"/>
+    <child link="linear_motor_stator"/>
     <origin xyz="0.0 0.0 0.06" rpy="0 0 0" />
   </joint>
-  <link name="BL4104C_1_stator">
+  <link name="linear_motor_stator">
     <visual>
       <geometry>
         <box size="0.72 0.12 0.1"/>
@@ -82,7 +82,7 @@
       <inertia ixx="0.01068855" ixy="-1.14168e-05" ixz="2.71689e-06" iyy="0.010584907" iyz="8.76312e-05" izz="0.0032026258"/>
     </inertial>
   </link>
-  <gazebo reference="BL4104C_1_stator">
+  <gazebo reference="linear_motor_stator">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <kp>1000000.0</kp>
@@ -91,12 +91,12 @@
     <minDepth>0.0001</minDepth>
     <material>Gazebo/Blue</material>
   </gazebo>
-  <joint name="BL4104C_1" type="prismatic">
+  <joint name="linear_motor" type="prismatic">
     <axis xyz="1 0 0"/>
-    <parent link="BL4104C_1_stator"/>
+    <parent link="linear_motor_stator"/>
     <child link="L_1_A"/>
-    <limit effort="1000.0" lower="-0.26" upper="0.26" velocity="100"/>
-    <origin rpy="0 0 0" xyz="0 0 0.09"/>
+    <limit effort="100.0" lower="-0.002" upper="0.400" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="-0.26 0 0.09"/>
   </joint>
   <link name="L_1_A">
     <visual>
@@ -345,13 +345,13 @@
     </inertial>
   </link>
 
-  <joint name="fixed_BL4104C_2" type="fixed">
+  <joint name="fixed_rotary_table" type="fixed">
     <axis rpy="0 0 0" xyz="0 0 1"/>
     <parent link="base_link_B"/>
-    <child link="BL4104C_2_stator"/>
+    <child link="rotary_table_stator"/>
     <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
   </joint>
-  <link name="BL4104C_2_stator">
+  <link name="rotary_table_stator">
     <visual>
       <!-- Load mesh. Rotate the origin frame (this is because of how the .stl was saved) -->
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.105"/>
@@ -372,7 +372,7 @@
       <inertia ixx="0.01068855" ixy="-1.14168e-05" ixz="2.71689e-06" iyy="0.010584907" iyz="8.76312e-05" izz="0.0032026258"/>
     </inertial>
   </link>
-  <gazebo reference="BL4104C_2_stator">
+  <gazebo reference="rotary_table_stator">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <kp>1000000.0</kp>
@@ -381,9 +381,9 @@
     <minDepth>0.0001</minDepth>
     <material>Gazebo/Blue</material>
   </gazebo>
-  <joint name="BL4104C_2" type="revolute">
+  <joint name="rotary_table" type="revolute">
     <axis rpy="0 0 0" xyz="0 0 1"/>
-    <parent link="BL4104C_2_stator"/>
+    <parent link="rotary_table_stator"/>
     <child link="L_1_B"/>
     <origin rpy="0.0 -0.0 -1.57" xyz="0.0 0.0 0.21"/>
     <limit effort="147" lower="-2.0" upper="2.0" velocity="1"/>
