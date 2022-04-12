@@ -3,11 +3,33 @@ solver_options:
     back_end: qpoases
 
 stack:
-    - [meca_B]
+    - [meca_B]   # , meca_B_roll, meca_B_pitch, meca_B_yaw]
+    - [meca_A]   #, meca_A_z, meca_A_roll, meca_A_pitch, meca_A_yaw]
     - [Postural]
 
 # constraints: [JointLimits, VelocityLimits]
 constraints: [JointLimits]
+
+meca_A:
+    type: Cartesian
+    distal_link: meca_axis_6_link_A
+    base_link: base_link_A
+    # control_mode: Velocity
+    lambda: 0.1
+    name: meca_A
+    # indices: [0, 1, 2]
+
+meca_A_z:
+    type: Subtask
+    task: meca_A
+    name: meca_A_z
+    indices: [2]
+
+meca_A_yaw:
+    type: Subtask
+    task: meca_A
+    name: meca_A_yaw
+    indices: [5]
 
 meca_B:
     type: Cartesian
