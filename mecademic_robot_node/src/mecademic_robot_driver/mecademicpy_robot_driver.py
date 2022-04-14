@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 import sys
+import signal
 import rospy
 from geometry_msgs.msg import Pose
 from sensor_msgs.msg import JointState
@@ -262,6 +263,10 @@ def get_joint_limits(meca_robot):
         res_get = get_event.wait(timeout=10)
         print(res_get.data)
 
+def handler(signum, frame):
+    print('\nDeactivating the robot') 
+    robot.DeactivateRobot()
+
 if __name__ == "__main__":
     if (len(sys.argv) !=3):
         print("Please provide robot_ip and robot_name!")
@@ -269,6 +274,7 @@ if __name__ == "__main__":
         robot_ip = sys.argv[1]
         robot_name = sys.argv[2]
 
+        signal.signal(signal.SIGINT, handler)
         robot = mdr.Robot()
         robot.Connect(address=str(robot_ip), disconnect_on_exception=False)
 
