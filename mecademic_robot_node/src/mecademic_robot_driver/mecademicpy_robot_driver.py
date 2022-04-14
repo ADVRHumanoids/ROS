@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+import sys
 import rospy
 from geometry_msgs.msg import Pose
 from sensor_msgs.msg import JointState
@@ -262,27 +263,33 @@ def get_joint_limits(meca_robot):
         print(res_get.data)
 
 if __name__ == "__main__":
-    robot = mdr.Robot()
-    robot.Connect(address='192.168.0.100', disconnect_on_exception=False)
+    if (len(sys.argv) !=3):
+        print("Please provide robot_ip and robot_name!")
+    else:
+        robot_ip = sys.argv[1]
+        robot_name = sys.argv[2]
 
-    # with mdr.Robot() as robot:
-    #     # CHECK THAT IP ADDRESS IS CORRECT! #
-    #     try:
-    #         robot.Connect(address='192.168.0.100')
-    #         print('Connected to robot')
-    #     except mdr.CommunicationError as e:
-    #         print(f'Robot failed to connect. Is the IP address correct? {e}')
-    #         raise e
+        robot = mdr.Robot()
+        robot.Connect(address=str(robot_ip), disconnect_on_exception=False)
 
-    # callbacks = mdr.RobotCallbacks()
-    # callbacks.on_monitor_message = robot.publish_rt_data
-    # robot.RegisterCallbacks(callbacks=callbacks, run_callbacks_in_separate_thread=True)
+        # with mdr.Robot() as robot:
+        #     # CHECK THAT IP ADDRESS IS CORRECT! #
+        #     try:
+        #         robot.Connect(address='192.168.0.100')
+        #         print('Connected to robot')
+        #     except mdr.CommunicationError as e:
+        #         print(f'Robot failed to connect. Is the IP address correct? {e}')
+        #         raise e
 
-    robot.ActivateRobot()
-    robot.Home()
-    driver = MecademicRobot_Driver(robot, name='mecademic_ros_device_B')
-    timer = rospy.Timer(rospy.Duration(0.005), driver.feedbackLoop)
-    while not rospy.is_shutdown():
-        # driver.feedbackLoop()
-        # rate.sleep()
-        rospy.spin()
+        # callbacks = mdr.RobotCallbacks()
+        # callbacks.on_monitor_message = robot.publish_rt_data
+        # robot.RegisterCallbacks(callbacks=callbacks, run_callbacks_in_separate_thread=True)
+
+        robot.ActivateRobot()
+        robot.Home()
+        driver = MecademicRobot_Driver(robot, name=str(robot_name)) #mecademic_ros_device_B
+        timer = rospy.Timer(rospy.Duration(0.005), driver.feedbackLoop)
+        while not rospy.is_shutdown():
+            # driver.feedbackLoop()
+            # rate.sleep()
+            rospy.spin()            
