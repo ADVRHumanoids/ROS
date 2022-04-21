@@ -29,7 +29,7 @@
   <joint name="world_to_base_A" type="fixed">
     <parent link="world"/>
     <child link="base_link_A"/>
-    <origin rpy="0 0 0" xyz="0.3 0 0.0"/>
+    <origin rpy="0 0 0" xyz="0.509 0.12 0.0"/>
   </joint>
 
   <gazebo>
@@ -54,16 +54,47 @@
     </inertial>
   </link>
 
+  <joint name="fixed_gear_box" type="fixed">
+    <axis rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="base_link_A"/>
+    <child link="gear_box"/>
+    <origin xyz="0.431 0.0 0.05" rpy="0 0 1.571" />
+  </joint>
+
+  <link name="gear_box">
+    <visual>
+      <geometry>
+        <cylinder length="0.366" radius="0.12"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+      <origin xyz="0.183 0 0" rpy="0 1.571 0" />
+    </visual>
+    <collision>
+      <origin xyz="0.183 0 0" rpy="0 1.571 0" />
+      <geometry>
+        <cylinder length="0.366" radius="0.12" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.10614489"/>
+      <mass value="2.0554934"/>
+      <inertia ixx="0.01068855" ixy="-1.14168e-05" ixz="2.71689e-06" iyy="0.010584907" iyz="8.76312e-05" izz="0.0032026258"/>
+    </inertial>
+  </link>
+
   <joint name="fixed_linear_motor" type="fixed">
     <axis rpy="0 0 0" xyz="0 0 1"/>
     <parent link="base_link_A"/>
     <child link="linear_motor_stator"/>
-    <origin xyz="0.0 0.0 0.06" rpy="0 0 0" />
+    <origin xyz="0.0 0.0 0.05" rpy="0 0 0" />
   </joint>
+
   <link name="linear_motor_stator">
     <visual>
       <geometry>
-        <box size="0.72 0.12 0.1"/>
+        <box size="0.98 0.12 0.1"/>
       </geometry>
       <material name="blue">
         <color rgba="0 0 .8 1"/>
@@ -71,9 +102,9 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0.05" rpy="0 1.571 0" />
       <geometry>
-        <box size="0.72 0.12 0.1"/>
+        <cylinder length="0.98" radius="0.12" />
       </geometry>
     </collision>
     <inertial>
@@ -403,7 +434,7 @@
 
  <!-- 2nd ROBOT -->
  <joint name="world_to_base_B" type="fixed">
-    <origin xyz="0.3 0.65 0" rpy="0 0 0"/>
+    <origin xyz="0.456 0.572 0" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="base_link_B"/>
   </joint>
@@ -424,6 +455,21 @@
     </gazebo>
   
   <link name="base_link_B">
+    <visual>
+      <geometry>
+        <box size="0.450 0.167 0.03"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.571 0" />
+      <geometry>
+        <cylinder length="0.450" radius="0.15"/>
+      </geometry>
+    </collision>
     <inertial>
       <mass value="0.1"/>
       <inertia ixx="1.0e-03" ixy="0.0" ixz="0.0" iyy="1.0e-03" iyz="0.0" izz="1.0e-03"/>
@@ -434,7 +480,7 @@
     <axis rpy="0 0 0" xyz="0 0 1"/>
     <parent link="base_link_B"/>
     <child link="rotary_table_stator"/>
-    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
+    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.03"/>
   </joint>
   <link name="rotary_table_stator">
     <visual>
@@ -448,7 +494,7 @@
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.105"/>
       <geometry>
-        <cylinder length="0.21" radius="0.13"/>
+        <cylinder length="0.21" radius="0.132"/>
       </geometry>
     </collision>
     <inertial>
@@ -515,7 +561,7 @@
   <joint name="L_1_B_to_meca_base_link_B" type="fixed">
     <parent link="L_1_B"/>
     <child link="meca_base_link_B"/>
-    <origin rpy="0 1.571 0" xyz="0.05 0.0 0.065"/>
+    <origin rpy="0 1.571 0" xyz="0.095 0.0 0.0645"/>
   </joint>
 
     <!-- Base link is the center of the robot's bottom plate -->
