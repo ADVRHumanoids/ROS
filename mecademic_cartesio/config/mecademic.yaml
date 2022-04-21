@@ -3,8 +3,8 @@ solver_options:
     back_end: qpoases
 
 stack:
-    - [meca_B]   # , meca_B_roll, meca_B_pitch, meca_B_yaw]
-    - [meca_A]   #, meca_A_z, meca_A_roll, meca_A_pitch, meca_A_yaw]
+    - [meca_B_x, meca_B_y, meca_B_z, meca_B_roll, meca_B_pitch, meca_B_yaw]
+    - [meca_A_x, meca_A_y, meca_A_z, meca_A_roll, meca_A_pitch, meca_A_yaw]
     - [Postural]
 
 # constraints: [JointLimits, VelocityLimits]
@@ -19,11 +19,35 @@ meca_A:
     name: meca_A
     # indices: [0, 1, 2]
 
+meca_A_x:
+    type: Subtask
+    task: meca_A
+    name: meca_A_x
+    indices: [0]
+
+meca_A_y:
+    type: Subtask
+    task: meca_A
+    name: meca_A_y
+    indices: [1]
+
 meca_A_z:
     type: Subtask
     task: meca_A
     name: meca_A_z
     indices: [2]
+
+meca_A_roll:
+    type: Subtask
+    task: meca_A
+    name: meca_A_roll
+    indices: [3]
+
+meca_A_pitch:
+    type: Subtask
+    task: meca_A
+    name: meca_A_pitch
+    indices: [4]
 
 meca_A_yaw:
     type: Subtask
@@ -39,6 +63,42 @@ meca_B:
     lambda: 0.1
     name: meca_B
     # indices: [0, 1, 2]
+
+meca_B_x:
+    type: Subtask
+    task: meca_B
+    name: meca_B_x
+    indices: [0]
+
+meca_B_y:
+    type: Subtask
+    task: meca_B
+    name: meca_B_y
+    indices: [1]
+
+meca_B_z:
+    type: Subtask
+    task: meca_B
+    name: meca_B_z
+    indices: [2]
+
+meca_B_roll:
+    type: Subtask
+    task: meca_B
+    name: meca_B_roll
+    indices: [3]
+
+meca_B_pitch:
+    type: Subtask
+    task: meca_B
+    name: meca_B_pitch
+    indices: [4]
+
+meca_B_yaw:
+    type: Subtask
+    task: meca_B
+    name: meca_B_yaw
+    indices: [5]
 
 JointLimits:
     type: JointLimits
