@@ -4,7 +4,6 @@ solver_options:
 
 stack:
     - [meca_B_x, meca_B_y, meca_B_z, meca_B_roll, meca_B_pitch, meca_B_yaw]
-    - [meca_A_x, meca_A_y, meca_A_z, meca_A_roll, meca_A_pitch, meca_A_yaw]
     - [Postural]
 
 # constraints: [JointLimits, VelocityLimits]
