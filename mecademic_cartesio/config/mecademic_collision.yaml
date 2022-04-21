@@ -22,7 +22,7 @@ Collision:
     lib_name: libcartesio_collision_support.so
     bound_scaling: 0.1
     distance_threshold: 0.001
-    max_pairs: 10
+    max_pairs: 100
     collision_urdf_path: $(rospack find mecademic_description)/urdf/meca_500_r3_capsule.urdf.xacro
     collision_srdf_path: $(rospack find mecademic_description)/srdf/meca_500_r3_capsule.srdf
 
