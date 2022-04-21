@@ -55,7 +55,7 @@
   </link>
 
   <joint name="fixed_gear_box" type="fixed">
-    <axis rpy="0 0 0" xyz="0 0 0"/>
+    <axis rpy="0 0 0" xyz="0 0 1"/>
     <parent link="base_link_A"/>
     <child link="gear_box"/>
     <origin xyz="0.431 0.0 0.05" rpy="0 0 1.571" />
@@ -455,6 +455,20 @@
     </gazebo>
   
   <link name="base_link_B">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="1.0e-03" ixy="0.0" ixz="0.0" iyy="1.0e-03" iyz="0.0" izz="1.0e-03"/>
+    </inertial>
+  </link>
+
+  <joint name="base_to_platform" type="fixed">
+    <axis rpy="0 0 0" xyz="0 0 1"/>
+    <parent link="base_link_B"/>
+    <child link="platform"/>
+    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
+  </joint>
+
+  <link name="platform">
     <visual>
       <geometry>
         <box size="0.450 0.167 0.03"/>
@@ -478,10 +492,11 @@
 
   <joint name="fixed_rotary_table" type="fixed">
     <axis rpy="0 0 0" xyz="0 0 1"/>
-    <parent link="base_link_B"/>
+    <parent link="platform"/>
     <child link="rotary_table_stator"/>
     <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.03"/>
   </joint>
+  
   <link name="rotary_table_stator">
     <visual>
       <!-- Load mesh. Rotate the origin frame (this is because of how the .stl was saved) -->
