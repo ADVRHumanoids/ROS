@@ -55,7 +55,6 @@
   </link>
 
   <joint name="fixed_gear_box" type="fixed">
-    <axis rpy="0 0 0" xyz="0 0 1"/>
     <parent link="base_link_A"/>
     <child link="gear_box"/>
     <origin xyz="0.431 0.0 0.05" rpy="0 0 1.571" />
@@ -85,7 +84,6 @@
   </link>
 
   <joint name="fixed_linear_motor" type="fixed">
-    <axis rpy="0 0 0" xyz="0 0 1"/>
     <parent link="base_link_A"/>
     <child link="linear_motor_stator"/>
     <origin xyz="0.0 0.0 0.05" rpy="0 0 0" />
@@ -376,7 +374,6 @@
   </link>
 
   <joint name="base_to_platform" type="fixed">
-    <axis rpy="0 0 0" xyz="0 0 1"/>
     <parent link="base_link_B"/>
     <child link="platform"/>
     <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -405,7 +402,6 @@
   </link>
 
   <joint name="fixed_rotary_table" type="fixed">
-    <axis rpy="0 0 0" xyz="0 0 1"/>
     <parent link="platform"/>
     <child link="rotary_table_stator"/>
     <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.03"/>
@@ -471,7 +467,6 @@
     </inertial>
   </link>
   <joint name="fixed_L_1_B_rotor_fast" type="fixed">
-    <axis rpy="0 0 0" xyz="0 0 1"/>
     <parent link="L_1_B"/>
     <child link="L_1_B_rotor_fast"/>
     <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
