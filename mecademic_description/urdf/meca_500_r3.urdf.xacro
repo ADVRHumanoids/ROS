@@ -99,9 +99,9 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0.05" rpy="0 1.571 0" />
       <geometry>
-        <box size="0.98 0.12 0.1"/>
+        <cylinder length="0.98" radius="0.12" />
       </geometry>
     </collision>
     <inertial>
@@ -376,7 +376,7 @@
   <joint name="base_to_platform" type="fixed">
     <parent link="base_link_B"/>
     <child link="platform"/>
-    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
+    <origin rpy="0.0 -0.0 0" xyz="0.0 0.0 0.0"/>
   </joint>
 
   <link name="platform">
@@ -387,10 +387,10 @@
       <material name="blue">
         <color rgba="0 0 .8 1"/>
       </material>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0.015" rpy="0 0 1.571" />
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 1.571 0" />
+      <origin xyz="0 0 0" rpy="1.571 0 0" />
       <geometry>
         <cylinder length="0.450" radius="0.15"/>
       </geometry>

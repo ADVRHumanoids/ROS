@@ -430,12 +430,12 @@
 
 
 
- <!-- 2nd ROBOT -->
- <joint name="world_to_base_B" type="fixed">
-    <origin xyz="0.456 0.572 0" rpy="0 0 0"/>
-    <parent link="world"/>
-    <child link="base_link_B"/>
-  </joint>
+<!-- 2nd ROBOT -->
+  <joint name="world_to_base_B" type="fixed">
+      <origin xyz="0.456 0.572 0" rpy="0 0 -1.571"/>
+      <parent link="world"/>
+      <child link="base_link_B"/>
+    </joint>
 
   <gazebo>
       <plugin filename="libxbot2_gz_joint_server.so" name="xbot2_gz_joint_server">
@@ -462,7 +462,7 @@
   <joint name="base_to_platform" type="fixed">
     <parent link="base_link_B"/>
     <child link="platform"/>
-    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
+    <origin rpy="0.0 -0.0 0" xyz="0.0 0.0 0.0"/>
   </joint>
 
   <link name="platform">
@@ -473,10 +473,10 @@
       <material name="blue">
         <color rgba="0 0 .8 1"/>
       </material>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0.015" rpy="0 0 1.571" />
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 1.571 0" />
+      <origin xyz="0 0 0" rpy="1.571 0 0" />
       <geometry>
         <cylinder length="0.450" radius="0.15"/>
       </geometry>
@@ -527,7 +527,7 @@
     <axis rpy="0 0 0" xyz="0 0 1"/>
     <parent link="rotary_table_stator"/>
     <child link="L_1_B"/>
-    <origin rpy="0.0 -0.0 -1.57" xyz="0.0 0.0 0.21"/>
+    <origin rpy="0.0 -0.0 0" xyz="0.0 0.0 0.21"/>
     <limit effort="147" lower="-2.0" upper="2.0" velocity="1"/>
   </joint>
   <!-- <xacro:property name="visual" value="package://sps-pkg/database/modular/meshes/yaw_base.stl"/> -->
