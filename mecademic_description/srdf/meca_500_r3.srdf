@@ -33,7 +33,7 @@
         <joint name="meca_axis_3_joint_B" value="-2.0" />
         <joint name="meca_axis_4_joint_B" value="0.0" />
         <joint name="meca_axis_5_joint_B" value="0.0" />
-        <joint name="meca_axis_6_joint_B" value="0.0" />
+        <joint name="meca_axis_6_joint_B" value="3.14" />
         <joint name="rotary_table" value="0" />
     </group_state>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
