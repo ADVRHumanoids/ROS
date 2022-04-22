@@ -56,4 +56,7 @@
     <disable_collisions link1="meca_axis_4_link_B" link2="meca_axis_5_link_B" reason="Adjacent" />
     <disable_collisions link1="meca_axis_4_link_B" link2="meca_axis_6_link_B" reason="Never" />
     <disable_collisions link1="meca_axis_5_link_B" link2="meca_axis_6_link_B" reason="Adjacent" />
+
+    <disable_collisions link1="meca_axis_5_link_B" link2="ee_sphere" reason="Never" />
+    <disable_collisions link1="meca_axis_6_link_B" link2="ee_sphere" reason="Adjacent" />
 </robot>
