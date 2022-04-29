@@ -40,7 +40,7 @@
         <joint name="meca_axis_3_joint_B" value="-2.0" />
         <joint name="meca_axis_4_joint_B" value="0.0" />
         <joint name="meca_axis_5_joint_B" value="0.0" />
-        <joint name="meca_axis_6_joint_B" value="0.0" />
+        <joint name="meca_axis_6_joint_B" value="3.14" />
         <joint name="rotary_table" value="0" />
         <joint name="meca_axis_1_joint_A" value="0" />
         <joint name="meca_axis_2_joint_A" value="-1.1" />
