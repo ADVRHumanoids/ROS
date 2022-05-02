@@ -29,7 +29,7 @@
   <joint name="world_to_base_A" type="fixed">
     <parent link="world"/>
     <child link="base_link_A"/>
-    <origin rpy="0 0 0" xyz="0.509 0.12 0.0"/>
+    <origin rpy="0 0 0" xyz="0.600 0.153 0.050"/>
   </joint>
 
   <gazebo>
@@ -153,7 +153,7 @@
   <joint name="L_1_A_to_meca_base_link_A" type="fixed">
     <parent link="L_1_A"/>
     <child link="meca_base_link_A"/>
-    <origin rpy="0 1.571 1.571" xyz="0.0 0 0.05"/>
+    <origin rpy="0 1.571 1.571" xyz="0.0 0.014 0.0744"/>
   </joint>
 
     <!-- Base link is the center of the robot's bottom plate -->
@@ -432,7 +432,7 @@
 
 <!-- 2nd ROBOT -->
   <joint name="world_to_base_B" type="fixed">
-      <origin xyz="0.456 0.572 0" rpy="0 0 -1.571"/>
+      <origin xyz="0.4521 0.9847 0.050" rpy="0 0 -1.571"/>
       <parent link="world"/>
       <child link="base_link_B"/>
     </joint>
@@ -459,38 +459,10 @@
     </inertial>
   </link>
 
-  <joint name="base_to_platform" type="fixed">
-    <parent link="base_link_B"/>
-    <child link="platform"/>
-    <origin rpy="0.0 -0.0 0" xyz="0.0 0.0 0.0"/>
-  </joint>
-
-  <link name="platform">
-    <visual>
-      <geometry>
-        <box size="0.450 0.167 0.03"/>
-      </geometry>
-      <material name="blue">
-        <color rgba="0 0 .8 1"/>
-      </material>
-      <origin xyz="0 0 0.015" rpy="0 0 1.571" />
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="1.571 0 0" />
-      <geometry>
-        <cylinder length="0.450" radius="0.15"/>
-      </geometry>
-    </collision>
-    <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="1.0e-03" ixy="0.0" ixz="0.0" iyy="1.0e-03" iyz="0.0" izz="1.0e-03"/>
-    </inertial>
-  </link>
-
   <joint name="fixed_rotary_table" type="fixed">
-    <parent link="platform"/>
+    <parent link="base_link_B"/>
     <child link="rotary_table_stator"/>
-    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.03"/>
+    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
   </joint>
   
   <link name="rotary_table_stator">
@@ -571,7 +543,7 @@
   <joint name="L_1_B_to_meca_base_link_B" type="fixed">
     <parent link="L_1_B"/>
     <child link="meca_base_link_B"/>
-    <origin rpy="0 1.571 0" xyz="0.095 0.0 0.0645"/>
+    <origin rpy="0 1.571 0" xyz="0.0475 0.0 0.0575"/>
   </joint>
 
     <!-- Base link is the center of the robot's bottom plate -->
@@ -848,7 +820,7 @@
 
   <!-- BUFFERS -->
   <joint name="world_to_buffer" type="fixed">
-    <origin xyz="0.2 0.35 0.05" rpy="0 0 0"/>
+     <origin xyz="0 0.585 0.15" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="buffer_base_link"/>
   </joint>
@@ -856,7 +828,7 @@
   <link name="buffer_base_link"/>   
 
   <joint name="buffer_base_to_1" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0.550 0 0" rpy="0 0 0"/>
     <parent link="buffer_base_link"/>
     <child link="buffer_1"/>
   </joint>
@@ -864,16 +836,17 @@
   <link name="buffer_1"/>
 
   <joint name="buffer_base_to_2" type="fixed">
-        <origin xyz="0.3 0.0 0" rpy="0 0 0"/>
+        <origin xyz="0.675 0.0 0" rpy="0 0 0"/>
         <parent link="buffer_base_link"/>
         <child link="buffer_2"/>
       </joint>
 
   <link name="buffer_2"/>
 
+
   <!-- CANDY MILL -->
   <joint name="world_to_mill" type="fixed">
-    <origin xyz="0.65 0.85 0.05" rpy="0 0 0"/>
+    <origin xyz="0.8154 1.0473 0.0" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="mill_base_link"/>
   </joint>
@@ -881,7 +854,7 @@
   <link name="mill_base_link"/>   
 
   <joint name="mill_base_to_stick" type="fixed">
-    <origin xyz="0.0 0 0.2" rpy="0 0 0"/>
+    <origin xyz="0.0 0 0.3068" rpy="0 0 0"/>
     <parent link="mill_base_link"/>
     <child link="mill_stick"/>
   </joint>
@@ -890,7 +863,7 @@
 
   <!-- SLIDERS -->
   <joint name="world_to_slider" type="fixed">
-    <origin xyz="0 0.3 0.05" rpy="0 0 0"/>
+    <origin xyz="0 0.585 0.05" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="slider_base_link"/>
   </joint>
@@ -898,7 +871,7 @@
   <link name="slider_base_link"/>   
 
   <joint name="slider_base_to_empty" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0.397 0 0.194" rpy="0 0.1745 0"/>
     <parent link="slider_base_link"/>
     <child link="empty_container"/>
   </joint>
@@ -906,7 +879,7 @@
   <link name="empty_container"/>
 
   <joint name="sliders_base_to_lid" type="fixed">
-        <origin xyz="0 0.05 0" rpy="0 0 0"/>
+        <origin xyz="0.322 0 0.319" rpy="0 0.1745 0"/>
         <parent link="slider_base_link"/>
         <child link="lid"/>
       </joint>
@@ -914,7 +887,7 @@
   <link name="lid"/>
 
   <joint name="sliders_base_to_full" type="fixed">
-        <origin xyz="0.6 0 0" rpy="0 0 0"/>
+       <origin xyz="0.809 0 0.295" rpy="0 0.1745 0"/>
         <parent link="slider_base_link"/>
         <child link="full_container"/>
       </joint>
@@ -923,7 +896,7 @@
 
   <!-- FLOOR -->
   <joint name="world_to_floor" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0 0 0.050" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="floor_link"/>
   </joint>
