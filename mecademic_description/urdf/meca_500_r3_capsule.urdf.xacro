@@ -428,7 +428,19 @@
     <limit effort="10.0" lower="-4.0" upper="4.0" velocity="8.72665"/>
   </joint>
 
+  <!-- End Effector -->
+  <link name="ee_link_A">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
 
+  <joint name="meca_to_ee_A_joint" type="fixed">
+    <origin xyz="0.015 0.0087 -0.0323" rpy="0 0 0" />
+    <parent link="meca_axis_6_link_A" />
+    <child link="ee_link_A" />
+  </joint>
 
 <!-- 2nd ROBOT -->
   <joint name="world_to_base_B" type="fixed">
@@ -816,6 +828,20 @@
     <child link="meca_axis_6_link_B" />
     <axis xyz="1 0 0" />
     <limit effort="10.0" velocity="8.72665" lower="-0.859" upper="7.141" />
+  </joint>
+
+  <!-- End Effector -->
+  <link name="ee_link_B">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="meca_to_ee_B_joint" type="fixed">
+    <origin xyz="0.0294 0 -0.01855" rpy="0 0 0" />
+    <parent link="meca_axis_6_link_B" />
+    <child link="ee_link_B" />
   </joint>
 
   <!-- BUFFERS -->

@@ -10,11 +10,11 @@
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="arm_B">
-        <chain base_link="base_link_B" tip_link="meca_axis_6_link_B" />
+        <chain base_link="base_link_B" tip_link="ee_link_B" />
     </group>
 
     <group name="arm_A">
-        <chain base_link="base_link_A" tip_link="meca_axis_6_link_A" />
+        <chain base_link="base_link_A" tip_link="ee_link_A" />
     </group>
 
     <group name="buffers">
