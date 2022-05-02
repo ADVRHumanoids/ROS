@@ -343,6 +343,32 @@
     <limit effort="10.0" velocity="8.72665" lower="-4.0" upper="4.0" />
   </joint>
 
+  <!-- gripper -->
+  <link name="vacuum_gripper">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mecademic_description/meshes/pneumatic_tube_holder_mesh_v2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mecademic_description/meshes/pneumatic_tube_holder_mesh_v2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="meca_to_gripper_A_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="meca_axis_6_link_A" />
+    <child link="vacuum_gripper" />
+  </joint>
+
   <!-- End Effector -->
   <link name="ee_link_A">
     <inertial>
@@ -351,9 +377,9 @@
     </inertial>
   </link>
 
-  <joint name="meca_to_ee_A_joint" type="fixed">
+  <joint name="vacum_gripper_to_ee_A_joint" type="fixed">
     <origin xyz="0.015 0.0087 -0.0323" rpy="0 0 0" />
-    <parent link="meca_axis_6_link_A" />
+    <parent link="vacuum_gripper" />
     <child link="ee_link_A" />
   </joint>
 
@@ -663,6 +689,33 @@
   </joint>
   <!-- we turned last link by 360 because of cable problems. still to be confirmed -->
 
+  <!-- Gripper -->
+  <link name="two_finger_gripper">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mecademic_description/meshes/gripper_finger_mesh_no_cable_metersv2.stl" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mecademic_description/meshes/gripper_finger_mesh_no_cable_metersv2.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="meca_to_gripper_B_joint" type="fixed">
+    <origin xyz="0 0 0" rpy=" 0 0 0" />
+    <parent link="meca_axis_6_link_B" />
+    <child link="two_finger_gripper" />
+  </joint>
+  <!-- we turned last link by 360 because of cable problems. still to be confirmed -->
+
   <!-- End Effector -->
   <link name="ee_link_B">
     <inertial>
@@ -672,10 +725,16 @@
   </link>
 
   <joint name="meca_to_ee_B_joint" type="fixed">
-    <origin xyz="0.0294 0 -0.01855" rpy="0 0 0" />
-    <parent link="meca_axis_6_link_B" />
+    <origin xyz="0.0379 0 0" rpy="0 0 0" />
+    <parent link="two_finger_gripper" />
     <child link="ee_link_B" />
   </joint>
+
+  <!-- <joint name="meca_to_ee_B_joint" type="fixed">
+    <origin xyz="0.0294 0 -0.01855" rpy="0 0 0" />
+    <parent link="two_finger_gripper" />
+    <child link="ee_link_B" />
+  </joint> -->
   
 
   <!-- BUFFERS -->
