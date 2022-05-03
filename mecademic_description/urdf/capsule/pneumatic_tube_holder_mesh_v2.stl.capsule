@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<robot name="/home/tree/collision_ws/src/mecademic_ros/mecademic_description/meshes/pneumatic_tube_holder_mesh_v2.stl" version="1.0">
+  <link name="0.00100_0.00100_0.00100">
+    <collision>
+      <origin rpy="4.35637496773e-05 -0.0111409793996 -2.42673928992e-07" xyz="0.0127944 8.22252e-07 -0.00216735"/>
+      <geometry>
+        <cylinder length="0.052940785559" radius="0.0217467"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<robot name="/home/tree/collision_ws/src/mecademic_ros/mecademic_description/meshes/gripper_finger_mesh_no_cable_metersv2.stl" version="1.0">
+  <link name="1.00000_1.00000_1.00000">
+    <collision>
+      <origin rpy="2.99328571636 -0.0290204710719 -0.385808816327" xyz="0.0145704 0.00322412242 -0.0077465"/>
+      <geometry>
+        <cylinder length="0.043637394583" radius="0.0445226"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
