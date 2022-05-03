@@ -895,25 +895,26 @@
     <child link="ee_link_B"/>
   </joint>
   <joint name="world_to_buffer" type="fixed">
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.585 0.15"/>
+     <origin xyz="0 0.51 0.2" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="buffer_base_link"/>
   </joint>
   <link name="buffer_base_link"/>
   <joint name="buffer_base_to_1" type="fixed">
-    <origin rpy="0.0 0.0 0.0" xyz="0.55 0.0 0.0"/>
+    <origin xyz="0.525 0 0" rpy="0 0 0"/>
     <parent link="buffer_base_link"/>
     <child link="buffer_1"/>
   </joint>
   <link name="buffer_1"/>
   <joint name="buffer_base_to_2" type="fixed">
-    <origin rpy="0.0 0.0 0.0" xyz="0.675 0.0 0.0"/>
-    <parent link="buffer_base_link"/>
-    <child link="buffer_2"/>
-  </joint>
+        <origin xyz="0.650 0.0 0" rpy="0 0 0"/>
+        <parent link="buffer_base_link"/>
+        <child link="buffer_2"/>
+      </joint>
+
   <link name="buffer_2"/>
   <joint name="world_to_mill" type="fixed">
-    <origin rpy="0.0 0.0 0.0" xyz="0.8154 1.0473 0.0"/>
+    <origin xyz="0.8154 0.8 0.0" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="mill_base_link"/>
   </joint>
@@ -924,6 +925,16 @@
     <child link="mill_stick"/>
   </joint>
   <link name="mill_stick"/>
+
+  <joint name="mill_base_to_buffer" type="fixed">
+    <origin xyz="0.0 0 0.1" rpy="0 0 0"/>
+    <parent link="mill_base_link"/>
+    <child link="mill_buffer"/>
+  </joint>
+
+  <link name="mill_buffer"/>
+
+  <!-- SLIDERS -->
   <joint name="world_to_slider" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.585 0.0"/>
     <parent link="world"/>
