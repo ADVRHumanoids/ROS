@@ -6,15 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /TF1
         - /TF1/Frames1
         - /RobotModel1
-        - /RobotModel1/Links1
-        - /PlanningScene1
         - /PlanningScene1/Scene Robot1
-        - /PlanningScene1/Scene Robot1/Links1
-        - /Marker1
-        - /InteractiveMarkers1
       Splitter Ratio: 0.5563063025474548
     Tree Height: 839
   - Class: rviz/Selection
@@ -66,25 +60,13 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        BL4104C_1_stator:
-          Value: true
-        L_1_B:
-          Value: true
-        L_1_B_rotor_fast:
-          Value: true
-        base_link_B:
-          Value: true
-        buffer_1:
-          Value: true
-        buffer_2:
-          Value: true
-        buffer_base_link:
-          Value: true
-        ci/BL4104C_1_stator:
+        ci/L_1_A:
           Value: true
         ci/L_1_B:
           Value: true
         ci/L_1_B_rotor_fast:
+          Value: true
+        ci/base_link_A:
           Value: true
         ci/base_link_B:
           Value: true
@@ -96,66 +78,64 @@ Visualization Manager:
           Value: false
         ci/com:
           Value: false
-        ci/empty_container:
+        ci/ee_link_A:
           Value: true
-        ci/floor_link:
+        ci/ee_link_B:
+          Value: true
+        ci/empty_container:
           Value: true
         ci/full_container:
           Value: true
+        ci/gear_box:
+          Value: true
         ci/lid:
+          Value: true
+        ci/linear_motor_stator:
+          Value: true
+        ci/meca_axis_1_link_A:
           Value: true
         ci/meca_axis_1_link_B:
           Value: false
+        ci/meca_axis_2_link_A:
+          Value: true
         ci/meca_axis_2_link_B:
           Value: false
+        ci/meca_axis_3_link_A:
+          Value: true
         ci/meca_axis_3_link_B:
           Value: false
+        ci/meca_axis_4_link_A:
+          Value: true
         ci/meca_axis_4_link_B:
           Value: false
+        ci/meca_axis_5_link_A:
+          Value: true
         ci/meca_axis_5_link_B:
           Value: false
+        ci/meca_axis_6_link_A:
+          Value: true
         ci/meca_axis_6_link_B:
+          Value: true
+        ci/meca_base_link_A:
           Value: true
         ci/meca_base_link_B:
           Value: false
         ci/mill_base_link:
           Value: true
+        ci/mill_buffer:
+          Value: true
         ci/mill_stick:
+          Value: true
+        ci/rotary_table_stator:
           Value: true
         ci/slider_base_link:
           Value: false
+        ci/two_finger_gripper:
+          Value: true
+        ci/vacuum_gripper:
+          Value: true
         ci/world:
           Value: false
-        empty_container:
-          Value: true
-        floor_link:
-          Value: true
-        full_container:
-          Value: true
-        lid:
-          Value: true
-        meca_axis_1_link_B:
-          Value: true
-        meca_axis_2_link_B:
-          Value: true
-        meca_axis_3_link_B:
-          Value: true
-        meca_axis_4_link_B:
-          Value: true
-        meca_axis_5_link_B:
-          Value: true
-        meca_axis_6_link_B:
-          Value: true
-        meca_base_link_B:
-          Value: true
-        mill_base_link:
-          Value: true
-        mill_stick:
-          Value: true
-        slider_base_link:
-          Value: true
-        world:
-          Value: true
       Marker Alpha: 1
       Marker Scale: 0.30000001192092896
       Name: TF
@@ -164,8 +144,23 @@ Visualization Manager:
       Show Names: false
       Tree:
         ci/world:
+          ci/base_link_A:
+            ci/gear_box:
+              {}
+            ci/linear_motor_stator:
+              ci/L_1_A:
+                ci/meca_base_link_A:
+                  ci/meca_axis_1_link_A:
+                    ci/meca_axis_2_link_A:
+                      ci/meca_axis_3_link_A:
+                        ci/meca_axis_4_link_A:
+                          ci/meca_axis_5_link_A:
+                            ci/meca_axis_6_link_A:
+                              ci/vacuum_gripper:
+                                ci/ee_link_A:
+                                  {}
           ci/base_link_B:
-            ci/BL4104C_1_stator:
+            ci/rotary_table_stator:
               ci/L_1_B:
                 ci/L_1_B_rotor_fast:
                   {}
@@ -176,7 +171,9 @@ Visualization Manager:
                         ci/meca_axis_4_link_B:
                           ci/meca_axis_5_link_B:
                             ci/meca_axis_6_link_B:
-                              {}
+                              ci/two_finger_gripper:
+                                ci/ee_link_B:
+                                  {}
           ci/buffer_base_link:
             ci/buffer_1:
               {}
@@ -184,9 +181,9 @@ Visualization Manager:
               {}
           ci/com:
             {}
-          ci/floor_link:
-            {}
           ci/mill_base_link:
+            ci/mill_buffer:
+              {}
             ci/mill_stick:
               {}
           ci/slider_base_link:
@@ -198,24 +195,193 @@ Visualization Manager:
               {}
       Update Interval: 0
       Value: true
-    - Alpha: 1
+    - Alpha: 0.8999999761581421
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: false
+      Enabled: true
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
+        L_1_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_1_B:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_1_B_rotor_fast:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         Link Tree Style: Links in Alphabetic Order
+        base_link_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_link_B:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        buffer_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        buffer_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        buffer_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        ee_link_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        ee_link_B:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        empty_container:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        full_container:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        gear_box:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lid:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        linear_motor_stator:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_axis_1_link_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_axis_1_link_B:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_axis_2_link_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_axis_2_link_B:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_axis_3_link_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_axis_3_link_B:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_axis_4_link_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_axis_4_link_B:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_axis_5_link_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_axis_5_link_B:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_axis_6_link_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_axis_6_link_B:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_base_link_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meca_base_link_B:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mill_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mill_buffer:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mill_stick:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rotary_table_stator:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        slider_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        two_finger_gripper:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        vacuum_gripper:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ci
       Update Interval: 0
-      Value: false
-      Visual Enabled: false
+      Value: true
+      Visual Enabled: true
     - Class: moveit_rviz_plugin/PlanningScene
-      Enabled: true
+      Enabled: false
       Move Group Namespace: ""
       Name: PlanningScene
       Planning Scene Topic: /cartesian/collision_avoidance/monitored_planning_scene
@@ -230,15 +396,15 @@ Visualization Manager:
       Scene Robot:
         Attached Body Color: 150; 50; 150
         Links:
-          All Links Enabled: false
-          BL4104C_1_stator:
+          All Links Enabled: true
+          Expand Joint Details: false
+          Expand Link Details: false
+          Expand Tree: false
+          L_1_A:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          Expand Joint Details: false
-          Expand Link Details: false
-          Expand Tree: false
           L_1_B:
             Alpha: 1
             Show Axes: false
@@ -249,6 +415,10 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
           Link Tree Style: Links in Alphabetic Order
+          base_link_A:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           base_link_B:
             Alpha: 1
             Show Axes: false
@@ -265,24 +435,47 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          ee_link_A:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          ee_link_B:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           empty_container:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-          floor_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: false
           full_container:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          gear_box:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           lid:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          linear_motor_stator:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          meca_axis_1_link_A:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           meca_axis_1_link_B:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          meca_axis_2_link_A:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -292,7 +485,17 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          meca_axis_3_link_A:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           meca_axis_3_link_B:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          meca_axis_4_link_A:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -302,12 +505,27 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          meca_axis_5_link_A:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           meca_axis_5_link_B:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
+          meca_axis_6_link_A:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           meca_axis_6_link_B:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          meca_base_link_A:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -321,14 +539,33 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          mill_buffer:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           mill_stick:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          rotary_table_stator:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           slider_base_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          two_finger_gripper:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          vacuum_gripper:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           world:
             Alpha: 1
             Show Axes: false
@@ -336,7 +573,7 @@ Visualization Manager:
         Robot Alpha: 0.30000001192092896
         Show Robot Collision: true
         Show Robot Visual: true
-      Value: true
+      Value: false
     - Class: rviz/Marker
       Enabled: true
       Marker Topic: /cartesian/collision_avoidance/collision_distances
@@ -382,7 +619,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.0314860343933105
+      Distance: 1.6823757886886597
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -398,9 +635,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6347969770431519
+      Pitch: 1.0847967863082886
       Target Frame: <Fixed Frame>
-      Yaw: 4.6186137199401855
+      Yaw: 3.0304272174835205
     Saved: ~
 Window Geometry:
   Displays:
