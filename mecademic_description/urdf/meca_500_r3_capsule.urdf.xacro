@@ -26,7 +26,7 @@
   </material>
   <link name="world"/>
   <joint name="world_to_base_A" type="fixed">
-    <origin rpy="0.0 0.0 0.0" xyz="0.6 0.153 0.05"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.6 0.16 0.05"/>
     <parent link="world"/>
     <child link="base_link_A"/>
   </joint>
@@ -895,7 +895,7 @@
     <child link="ee_link_B"/>
   </joint>
   <joint name="world_to_buffer" type="fixed">
-     <origin xyz="0 0.51 0.2" rpy="0 0 0"/>
+     <origin xyz="0 0.585 0.2" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="buffer_base_link"/>
   </joint>
@@ -927,7 +927,7 @@
   <link name="mill_stick"/>
 
   <joint name="mill_base_to_buffer" type="fixed">
-    <origin xyz="0.0 0 0.1" rpy="0 0 0"/>
+    <origin xyz="0.0 0 0.15" rpy="0 0 0"/>
     <parent link="mill_base_link"/>
     <child link="mill_buffer"/>
   </joint>
