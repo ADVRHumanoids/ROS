@@ -133,6 +133,8 @@
     <disable_collisions link1="meca_axis_1_link_B" link2="meca_base_link_B" reason="Adjacent" />
     <disable_collisions link1="meca_axis_1_link_B" link2="rotary_table_stator" reason="Default" />
     <disable_collisions link1="meca_axis_1_link_B" link2="vacuum_gripper" reason="Never" />
+    <disable_collisions link1="meca_axis_2_link_A" link2="linear_motor_stator" reason="Never" />
+    <disable_collisions link1="meca_axis_2_link_A" link2="L_1_A" reason="Never" />
     <disable_collisions link1="meca_axis_2_link_A" link2="meca_axis_2_link_B" reason="Never" />
     <disable_collisions link1="meca_axis_2_link_A" link2="meca_axis_3_link_A" reason="Adjacent" />
     <disable_collisions link1="meca_axis_2_link_A" link2="meca_axis_3_link_B" reason="Never" />
