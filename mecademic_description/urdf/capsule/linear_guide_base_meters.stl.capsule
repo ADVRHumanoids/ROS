@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<robot name="/home/tree/collision_ws/src/mecademic_ros/mecademic_description/meshes/linear_guide_base_meters.stl" version="1.0">
+  <link name="1.00000_1.00000_1.00000">
+    <collision>
+      <origin rpy="2.2937756802 1.5707939573 2.29377390347" xyz="0.49 0.05430915 0.05892555"/>
+      <geometry>
+        <cylinder length="0.956812000003" radius="0.081078"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

@@ -153,13 +153,13 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://mecademic_description/meshes/pump_and_robot_mount_metres_lower_quality.stl" />
+        <mesh filename="package://mecademic_description/meshes/pump_and_robot_mount_metres_even_lower_quality.stl" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://mecademic_description/meshes/pump_and_robot_mount_metres_lower_quality.stl" />
+        <mesh filename="package://mecademic_description/meshes/pump_and_robot_mount_metres_even_lower_quality.stl" />
       </geometry>
     </collision>
     <inertial>

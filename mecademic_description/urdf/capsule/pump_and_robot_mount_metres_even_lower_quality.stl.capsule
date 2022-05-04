@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<robot name="/home/tree/collision_ws/src/mecademic_ros/mecademic_description/meshes/pump_and_robot_mount_metres_even_lower_quality.stl" version="1.0">
+  <link name="1.00000_1.00000_1.00000">
+    <collision>
+      <origin rpy="-1.62917422953 1.38891587263 -1.44663604517" xyz="-0.01940155 -0.01246106 0.07044685"/>
+      <geometry>
+        <cylinder length="0.0846839364147" radius="0.111533"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
