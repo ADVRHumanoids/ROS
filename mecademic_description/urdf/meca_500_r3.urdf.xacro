@@ -821,7 +821,7 @@
   <link name="full_container"/>
 
   <!-- FLOOR -->
-  <joint name="world_to_floor" type="fixed">
+  <!-- <joint name="world_to_floor" type="fixed">
     <origin xyz="0 0 0.050" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="floor_link"/>
@@ -843,7 +843,7 @@
         <box size="2 2 0"/>
       </geometry>
     </collision>
-  </link>
+  </link> -->
 
 
 </robot>
