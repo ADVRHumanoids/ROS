@@ -29,7 +29,7 @@
   <joint name="world_to_base_A" type="fixed">
     <parent link="world"/>
     <child link="base_link_A"/>
-    <origin rpy="0 0 0" xyz="0.600 0.16 0.050"/>
+    <origin rpy="0 0 0" xyz="0.110 0.083 0.050"/>
   </joint>
 
   <gazebo>
@@ -57,24 +57,24 @@
   <joint name="fixed_gear_box" type="fixed">
     <parent link="base_link_A"/>
     <child link="gear_box"/>
-    <origin xyz="0.431 0.0 0.05" rpy="0 0 1.571" />
+    <origin xyz="0.927 0.07 0.08" rpy="0 0 1.571" />
   </joint>
 
  <link name="gear_box">
     <visual>
       <geometry>
-        <cylinder length="0.366" radius="0.12"/>
+        <cylinder length="0.405" radius="0.065"/>
       </geometry>
       <material name="blue">
         <color rgba="0 0 .8 1"/>
       </material>
-      <origin xyz="0.183 0 0" rpy="0 1.571 0" />
+      <origin xyz="0.2025 0 0.0" rpy="0 1.571 0" />
     </visual>
     <collision>
-      <origin xyz="0.183 0 0" rpy="0 1.571 0" />
       <geometry>
-        <cylinder length="0.366" radius="0.12" />
+        <cylinder length="0.405" radius="0.065"/>
       </geometry>
+      <origin xyz="0.2025 0 0.0" rpy="0 1.571 0" />
     </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.10614489"/>
@@ -86,22 +86,19 @@
   <joint name="fixed_linear_motor" type="fixed">
     <parent link="base_link_A"/>
     <child link="linear_motor_stator"/>
-    <origin xyz="0.0 0.0 0.05" rpy="0 0 0" />
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
   </joint>
   <link name="linear_motor_stator">
     <visual>
-      <geometry>
-        <box size="0.98 0.12 0.1"/>
-      </geometry>
-      <material name="blue">
-        <color rgba="0 0 .8 1"/>
-      </material>
       <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mecademic_description/meshes/linear_guide_base_meters.stl" />
+      </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0.05" rpy="0 1.571 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <cylinder length="0.98" radius="0.12" />
+        <mesh filename="package://mecademic_description/meshes/linear_guide_base_meters.stl" />
       </geometry>
     </collision>
     <inertial>
@@ -124,22 +121,19 @@
     <parent link="linear_motor_stator"/>
     <child link="L_1_A"/>
     <limit effort="100.0" lower="-0.002" upper="0.400" velocity="0.5"/>
-    <origin rpy="0 0 0" xyz="-0.26 0 0.09"/>
+    <origin rpy="0 0 0" xyz="0.262 0.06 0.102"/>
   </joint>
   <link name="L_1_A">
     <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.2 0.2 0.04"/>
+        <mesh filename="package://mecademic_description/meshes/linear_guide_mover_meters.stl" />
       </geometry>
-      <material name="blue">
-        <color rgba="0 0 .8 1"/>
-      </material>
-      <origin xyz="0 0 -0.02" rpy="0 0 0" />
     </visual>
     <collision>
-      <origin xyz="0 0 -0.02" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.2 0.2 0.04"/>
+        <mesh filename="package://mecademic_description/meshes/linear_guide_mover_meters.stl" />
       </geometry>
     </collision>
     <inertial>
@@ -149,10 +143,36 @@
     </inertial>
   </link>
 
-  <joint name="L_1_A_to_meca_base_link_A" type="fixed">
+  <joint name="L_1_A_to_stuff_on_top_A" type="fixed">
     <parent link="L_1_A"/>
+    <child link="stuff_on_top_A"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0355"/>
+  </joint>
+
+  <link name="stuff_on_top_A">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mecademic_description/meshes/pump_and_robot_mount_metres_lower_quality.stl" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mecademic_description/meshes/pump_and_robot_mount_metres_lower_quality.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.024438213"/>
+      <mass value="0.42322395"/>
+      <inertia ixx="0.00063746146" ixy="1.1903424e-05" ixz="6.7230372e-07" iyy="0.00064218987" iyz="2.203073e-05" izz="0.001009674"/>
+    </inertial>
+  </link>
+
+  <joint name="stuff_on_top_A_to_meca_base_link_A" type="fixed">
+    <parent link="stuff_on_top_A"/>
     <child link="meca_base_link_A"/>
-    <origin rpy="0 1.571 1.571" xyz="0.0 0.014 0.0744"/>
+    <origin rpy="0 1.571 1.571" xyz="0.05 0.024 0.0705"/>
   </joint>
 
     <!-- Base link is the center of the robot's bottom plate -->
@@ -497,7 +517,7 @@
   <joint name="L_1_B_to_meca_base_link_B" type="fixed">
     <parent link="L_1_B"/>
     <child link="meca_base_link_B"/>
-    <origin rpy="0 1.571 0" xyz="0.0475 0.0 0.0575"/>
+    <origin rpy="0 1.571 0" xyz="0.0475 0.0 0.0645"/>
   </joint>
 
     <!-- Base link is the center of the robot's bottom plate -->
