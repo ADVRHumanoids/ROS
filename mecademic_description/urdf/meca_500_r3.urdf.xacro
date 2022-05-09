@@ -29,7 +29,7 @@
   <joint name="world_to_base_A" type="fixed">
     <parent link="world"/>
     <child link="base_link_A"/>
-    <origin rpy="0 0 0" xyz="0.030 0.10 0.050"/>
+    <origin rpy="0 0 0" xyz="0.030 0.083 0.050"/>
   </joint>
 
   <gazebo>
@@ -172,7 +172,7 @@
   <joint name="stuff_on_top_A_to_meca_base_link_A" type="fixed">
     <parent link="stuff_on_top_A"/>
     <child link="meca_base_link_A"/>
-    <origin rpy="0 1.571 1.571" xyz="0.05 0.024 0.0705"/>
+    <origin rpy="0 1.571 1.571" xyz="0.05 0.061 0.0705"/>
   </joint>
 
     <!-- Base link is the center of the robot's bottom plate -->
@@ -406,7 +406,7 @@
 
 <!-- 2nd ROBOT -->
   <joint name="world_to_base_B" type="fixed">
-      <origin xyz="0.4521 0.9847 0.050" rpy="0 0 -1.571"/>
+      <origin xyz="0.4521 1.0047 0.050" rpy="0 0 -1.571"/>
       <parent link="world"/>
       <child link="base_link_B"/>
     </joint>
@@ -759,7 +759,7 @@
 
   <!-- BUFFERS -->
   <joint name="world_to_buffer" type="fixed">
-     <origin xyz="0 0.650 0.075" rpy="0 0 0"/>
+     <origin xyz="0 0.670 0.075" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="buffer_base_link"/>
   </joint>
@@ -801,7 +801,7 @@
 
   <!-- CANDY MILL -->
   <joint name="world_to_mill" type="fixed">
-    <origin xyz="0.8154 0.8 0.0" rpy="0 0 0"/>
+    <origin xyz="0.8154 0.82 0.0" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="mill_base_link"/>
   </joint>
@@ -826,7 +826,7 @@
 
   <!-- SLIDERS -->
   <joint name="world_to_slider" type="fixed">
-    <origin xyz="0 0.650 0.0" rpy="0 0 0"/>
+    <origin xyz="0 0.670 0.0" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="slider_base_link"/>
   </joint>
