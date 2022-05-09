@@ -29,7 +29,7 @@
   <joint name="world_to_base_A" type="fixed">
     <parent link="world"/>
     <child link="base_link_A"/>
-    <origin rpy="0 0 0" xyz="0.110 0.083 0.050"/>
+    <origin rpy="0 0 0" xyz="0.030 0.10 0.050"/>
   </joint>
 
   <gazebo>

@@ -26,7 +26,7 @@
   </material>
   <link name="world"/>
   <joint name="world_to_base_A" type="fixed">
-    <origin rpy="0.0 0.0 0.0" xyz="0.11 0.083 0.05"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.03 0.10 0.05"/>
     <parent link="world"/>
     <child link="base_link_A"/>
   </joint>
