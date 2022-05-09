@@ -937,19 +937,19 @@
     <child link="ee_link_B"/>
   </joint>
   <joint name="world_to_buffer" type="fixed">
-     <origin xyz="0 0.585 0.2" rpy="0 0 0"/>
+    <origin xyz="0 0.650 0.075" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="buffer_base_link"/>
   </joint>
   <link name="buffer_base_link">
     <visual>
-      <origin xyz="0 0.065 -0.075" rpy="1.57 0 -1.57" />
+      <origin xyz="0 0.0 0.0" rpy="1.57 0 -1.57" />
       <geometry>
         <mesh filename="package://mecademic_description/meshes/buffer_and_slide_support_v17.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0.065 -0.075" rpy="1.57 0 -1.57" />
+      <origin xyz="0 0.0 0.0" rpy="1.57 0 -1.57" />
       <geometry>
         <mesh filename="package://mecademic_description/meshes/buffer_and_slide_support_v17.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -960,13 +960,13 @@
     </inertial>
   </link>
   <joint name="buffer_base_to_1" type="fixed">
-    <origin xyz="0.525 0 0" rpy="0 0 0"/>
+    <origin xyz="0.525 -0.065 0.03" rpy="0 0 0"/>
     <parent link="buffer_base_link"/>
     <child link="buffer_1"/>
   </joint>
   <link name="buffer_1"/>
   <joint name="buffer_base_to_2" type="fixed">
-        <origin xyz="0.650 0.0 0" rpy="0 0 0"/>
+        <origin xyz="0.650 -0.065 0.03" rpy="0 0 0"/>
         <parent link="buffer_base_link"/>
         <child link="buffer_2"/>
       </joint>
@@ -995,25 +995,25 @@
 
   <!-- SLIDERS -->
   <joint name="world_to_slider" type="fixed">
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.585 0.0"/>
+    <origin xyz="0 0.650 0.0" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="slider_base_link"/>
   </joint>
   <link name="slider_base_link"/>
   <joint name="slider_base_to_empty" type="fixed">
-    <origin rpy="0.0 0.1745 0.0" xyz="0.397 0.0 0.194"/>
+    <origin xyz="0.397 -0.065 0.194" rpy="0 0.1745 0"/>
     <parent link="slider_base_link"/>
     <child link="empty_container"/>
   </joint>
   <link name="empty_container"/>
   <joint name="sliders_base_to_lid" type="fixed">
-    <origin rpy="0.0 0.1745 0.0" xyz="0.322 0.0 0.319"/>
+    <origin xyz="0.322 -0.065 0.319" rpy="0 0.1745 0"/>
     <parent link="slider_base_link"/>
     <child link="lid"/>
   </joint>
   <link name="lid"/>
   <joint name="sliders_base_to_full" type="fixed">
-    <origin rpy="0.0 0.1745 0.0" xyz="0.809 0.0 0.295"/>
+    <origin xyz="0.809 -0.065 0.295" rpy="0 0.1745 0"/>
     <parent link="slider_base_link"/>
     <child link="full_container"/>
   </joint>
