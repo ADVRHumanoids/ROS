@@ -941,7 +941,24 @@
     <parent link="world"/>
     <child link="buffer_base_link"/>
   </joint>
-  <link name="buffer_base_link"/>
+  <link name="buffer_base_link">
+    <visual>
+      <origin xyz="0 0.065 -0.075" rpy="1.57 0 -1.57" />
+      <geometry>
+        <mesh filename="package://mecademic_description/meshes/buffer_and_slide_support_v17.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0.065 -0.075" rpy="1.57 0 -1.57" />
+      <geometry>
+        <mesh filename="package://mecademic_description/meshes/buffer_and_slide_support_v17.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
   <joint name="buffer_base_to_1" type="fixed">
     <origin xyz="0.525 0 0" rpy="0 0 0"/>
     <parent link="buffer_base_link"/>

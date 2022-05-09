@@ -45,6 +45,7 @@
     </group_state>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="L_1_A" link2="L_1_B" reason="Never" />
+    <disable_collisions link1="L_1_A" link2="buffer_base_link" reason="Never" />
     <disable_collisions link1="L_1_A" link2="floor_link" reason="Never" />
     <disable_collisions link1="L_1_A" link2="gear_box" reason="Never" />
     <disable_collisions link1="L_1_A" link2="linear_motor_stator" reason="Adjacent" />
@@ -61,6 +62,7 @@
     <disable_collisions link1="L_1_A" link2="rotary_table_stator" reason="Never" />
     <disable_collisions link1="L_1_A" link2="stuff_on_top_A" reason="Adjacent" />
     <disable_collisions link1="L_1_A" link2="two_finger_gripper" reason="Never" />
+    <disable_collisions link1="L_1_B" link2="buffer_base_link" reason="Never" />
     <disable_collisions link1="L_1_B" link2="floor_link" reason="Never" />
     <disable_collisions link1="L_1_B" link2="gear_box" reason="Never" />
     <disable_collisions link1="L_1_B" link2="linear_motor_stator" reason="Never" />
@@ -78,6 +80,18 @@
     <disable_collisions link1="L_1_B" link2="rotary_table_stator" reason="Adjacent" />
     <disable_collisions link1="L_1_B" link2="stuff_on_top_A" reason="Never" />
     <disable_collisions link1="L_1_B" link2="vacuum_gripper" reason="Never" />
+    <disable_collisions link1="buffer_base_link" link2="floor_link" reason="Adjacent" />
+    <disable_collisions link1="buffer_base_link" link2="gear_box" reason="Adjacent" />
+    <disable_collisions link1="buffer_base_link" link2="linear_motor_stator" reason="Adjacent" />
+    <disable_collisions link1="buffer_base_link" link2="meca_axis_1_link_A" reason="Never" />
+    <disable_collisions link1="buffer_base_link" link2="meca_axis_1_link_B" reason="Never" />
+    <disable_collisions link1="buffer_base_link" link2="meca_axis_2_link_A" reason="Never" />
+    <disable_collisions link1="buffer_base_link" link2="meca_axis_2_link_B" reason="Never" />
+    <disable_collisions link1="buffer_base_link" link2="meca_axis_3_link_A" reason="Never" />
+    <disable_collisions link1="buffer_base_link" link2="meca_base_link_A" reason="Never" />
+    <disable_collisions link1="buffer_base_link" link2="meca_base_link_B" reason="Never" />
+    <disable_collisions link1="buffer_base_link" link2="rotary_table_stator" reason="Adjacent" />
+    <disable_collisions link1="buffer_base_link" link2="stuff_on_top_A" reason="Never" />
     <disable_collisions link1="floor_link" link2="gear_box" reason="Adjacent" />
     <disable_collisions link1="floor_link" link2="linear_motor_stator" reason="Adjacent" />
     <disable_collisions link1="floor_link" link2="meca_axis_1_link_A" reason="Never" />
