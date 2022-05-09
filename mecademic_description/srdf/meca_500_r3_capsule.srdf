@@ -38,7 +38,7 @@
         <joint name="meca_axis_4_joint_A" value="0" />
         <joint name="meca_axis_4_joint_B" value="0" />
         <joint name="meca_axis_5_joint_A" value="0" />
-        <joint name="meca_axis_5_joint_B" value="-2." />
+        <joint name="meca_axis_5_joint_B" value="-2" />
         <joint name="meca_axis_6_joint_A" value="0" />
         <joint name="meca_axis_6_joint_B" value="1.58" />
         <joint name="rotary_table" value="-0.71" />
@@ -46,10 +46,9 @@
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="L_1_A" link2="L_1_B" reason="Never" />
     <disable_collisions link1="L_1_A" link2="buffer_base_link" reason="Never" />
-    <disable_collisions link1="L_1_A" link2="floor_link" reason="Never" />
     <disable_collisions link1="L_1_A" link2="gear_box" reason="Never" />
     <disable_collisions link1="L_1_A" link2="linear_motor_stator" reason="Adjacent" />
-    <disable_collisions link1="L_1_A" link2="meca_axis_1_link_A" reason="Never" />
+    <disable_collisions link1="L_1_A" link2="meca_axis_1_link_A" reason="Always" />
     <disable_collisions link1="L_1_A" link2="meca_axis_1_link_B" reason="Never" />
     <disable_collisions link1="L_1_A" link2="meca_axis_2_link_A" reason="Never" />
     <disable_collisions link1="L_1_A" link2="meca_axis_2_link_B" reason="Never" />
@@ -57,13 +56,12 @@
     <disable_collisions link1="L_1_A" link2="meca_axis_4_link_B" reason="Never" />
     <disable_collisions link1="L_1_A" link2="meca_axis_5_link_B" reason="Never" />
     <disable_collisions link1="L_1_A" link2="meca_axis_6_link_B" reason="Never" />
-    <disable_collisions link1="L_1_A" link2="meca_base_link_A" reason="Never" />
+    <disable_collisions link1="L_1_A" link2="meca_base_link_A" reason="Default" />
     <disable_collisions link1="L_1_A" link2="meca_base_link_B" reason="Never" />
     <disable_collisions link1="L_1_A" link2="rotary_table_stator" reason="Never" />
     <disable_collisions link1="L_1_A" link2="stuff_on_top_A" reason="Adjacent" />
     <disable_collisions link1="L_1_A" link2="two_finger_gripper" reason="Never" />
     <disable_collisions link1="L_1_B" link2="buffer_base_link" reason="Never" />
-    <disable_collisions link1="L_1_B" link2="floor_link" reason="Never" />
     <disable_collisions link1="L_1_B" link2="gear_box" reason="Never" />
     <disable_collisions link1="L_1_B" link2="linear_motor_stator" reason="Never" />
     <disable_collisions link1="L_1_B" link2="meca_axis_1_link_A" reason="Never" />
@@ -80,7 +78,6 @@
     <disable_collisions link1="L_1_B" link2="rotary_table_stator" reason="Adjacent" />
     <disable_collisions link1="L_1_B" link2="stuff_on_top_A" reason="Never" />
     <disable_collisions link1="L_1_B" link2="vacuum_gripper" reason="Never" />
-    <disable_collisions link1="buffer_base_link" link2="floor_link" reason="Adjacent" />
     <disable_collisions link1="buffer_base_link" link2="gear_box" reason="Adjacent" />
     <disable_collisions link1="buffer_base_link" link2="linear_motor_stator" reason="Adjacent" />
     <disable_collisions link1="buffer_base_link" link2="meca_axis_1_link_A" reason="Never" />
@@ -92,18 +89,6 @@
     <disable_collisions link1="buffer_base_link" link2="meca_base_link_B" reason="Never" />
     <disable_collisions link1="buffer_base_link" link2="rotary_table_stator" reason="Adjacent" />
     <disable_collisions link1="buffer_base_link" link2="stuff_on_top_A" reason="Never" />
-    <disable_collisions link1="floor_link" link2="gear_box" reason="Adjacent" />
-    <disable_collisions link1="floor_link" link2="linear_motor_stator" reason="Adjacent" />
-    <disable_collisions link1="floor_link" link2="meca_axis_1_link_A" reason="Never" />
-    <disable_collisions link1="floor_link" link2="meca_axis_1_link_B" reason="Never" />
-    <disable_collisions link1="floor_link" link2="meca_axis_2_link_A" reason="Never" />
-    <disable_collisions link1="floor_link" link2="meca_axis_2_link_B" reason="Never" />
-    <disable_collisions link1="floor_link" link2="meca_axis_3_link_B" reason="Never" />
-    <disable_collisions link1="floor_link" link2="meca_base_link_A" reason="Never" />
-    <disable_collisions link1="floor_link" link2="meca_base_link_B" reason="Never" />
-    <disable_collisions link1="floor_link" link2="rotary_table_stator" reason="Adjacent" />
-    <disable_collisions link1="floor_link" link2="stuff_on_top_A" reason="Never" />
-    <disable_collisions link1="floor_link" link2="vacuum_gripper" reason="Default" />
     <disable_collisions link1="gear_box" link2="linear_motor_stator" reason="Adjacent" />
     <disable_collisions link1="gear_box" link2="meca_axis_1_link_A" reason="Never" />
     <disable_collisions link1="gear_box" link2="meca_axis_1_link_B" reason="Never" />
@@ -127,10 +112,10 @@
     <disable_collisions link1="linear_motor_stator" link2="meca_axis_4_link_B" reason="Never" />
     <disable_collisions link1="linear_motor_stator" link2="meca_axis_5_link_B" reason="Never" />
     <disable_collisions link1="linear_motor_stator" link2="meca_axis_6_link_B" reason="Never" />
-    <disable_collisions link1="linear_motor_stator" link2="meca_base_link_A" reason="Never" />
+    <disable_collisions link1="linear_motor_stator" link2="meca_base_link_A" reason="Default" />
     <disable_collisions link1="linear_motor_stator" link2="meca_base_link_B" reason="Never" />
     <disable_collisions link1="linear_motor_stator" link2="rotary_table_stator" reason="Adjacent" />
-    <disable_collisions link1="linear_motor_stator" link2="stuff_on_top_A" reason="Never" />
+    <disable_collisions link1="linear_motor_stator" link2="stuff_on_top_A" reason="Default" />
     <disable_collisions link1="linear_motor_stator" link2="two_finger_gripper" reason="Never" />
     <disable_collisions link1="meca_axis_1_link_A" link2="meca_axis_1_link_B" reason="Never" />
     <disable_collisions link1="meca_axis_1_link_A" link2="meca_axis_2_link_A" reason="Adjacent" />
@@ -143,7 +128,7 @@
     <disable_collisions link1="meca_axis_1_link_A" link2="meca_base_link_A" reason="Adjacent" />
     <disable_collisions link1="meca_axis_1_link_A" link2="meca_base_link_B" reason="Never" />
     <disable_collisions link1="meca_axis_1_link_A" link2="rotary_table_stator" reason="Never" />
-    <disable_collisions link1="meca_axis_1_link_A" link2="stuff_on_top_A" reason="Never" />
+    <disable_collisions link1="meca_axis_1_link_A" link2="stuff_on_top_A" reason="Default" />
     <disable_collisions link1="meca_axis_1_link_A" link2="two_finger_gripper" reason="Never" />
     <disable_collisions link1="meca_axis_1_link_B" link2="meca_axis_2_link_A" reason="Never" />
     <disable_collisions link1="meca_axis_1_link_B" link2="meca_axis_2_link_B" reason="Adjacent" />
@@ -164,7 +149,7 @@
     <disable_collisions link1="meca_axis_2_link_A" link2="meca_axis_3_link_B" reason="Never" />
     <disable_collisions link1="meca_axis_2_link_A" link2="meca_axis_4_link_A" reason="Default" />
     <disable_collisions link1="meca_axis_2_link_A" link2="meca_axis_4_link_B" reason="Never" />
-    <disable_collisions link1="meca_axis_2_link_A" link2="meca_base_link_A" reason="Never" />
+    <disable_collisions link1="meca_axis_2_link_A" link2="meca_base_link_A" reason="Default" />
 <!-- these depends a lot on the distance between the two robot -->
     <!-- <disable_collisions link1="meca_axis_2_link_A" link2="meca_axis_5_link_B" reason="Never" />
     <disable_collisions link1="meca_axis_2_link_A" link2="meca_axis_6_link_B" reason="Never" /> -->
@@ -179,7 +164,7 @@
     <!-- <disable_collisions link1="meca_axis_2_link_B" link2="meca_axis_5_link_A" reason="Never" />
     <disable_collisions link1="meca_axis_2_link_B" link2="meca_axis_6_link_A" reason="Never" /> -->
     <disable_collisions link1="meca_axis_2_link_B" link2="meca_base_link_A" reason="Never" />
-    <disable_collisions link1="meca_axis_2_link_B" link2="meca_base_link_B" reason="Never" />
+    <disable_collisions link1="meca_axis_2_link_B" link2="meca_base_link_B" reason="Default" />
     <disable_collisions link1="meca_axis_2_link_B" link2="rotary_table_stator" reason="Default" />
     <disable_collisions link1="meca_axis_2_link_B" link2="stuff_on_top_A" reason="Never" />
     <disable_collisions link1="meca_axis_3_link_A" link2="meca_axis_3_link_B" reason="Never" />
@@ -216,7 +201,7 @@
     <disable_collisions link1="meca_axis_5_link_A" link2="meca_axis_6_link_A" reason="Adjacent" />
     <disable_collisions link1="meca_axis_5_link_A" link2="meca_base_link_B" reason="Never" />
     <disable_collisions link1="meca_axis_5_link_A" link2="rotary_table_stator" reason="Never" />
-    <disable_collisions link1="meca_axis_5_link_A" link2="vacuum_gripper" reason="Never" />
+    <disable_collisions link1="meca_axis_5_link_A" link2="vacuum_gripper" reason="Default" />
     <disable_collisions link1="meca_axis_5_link_B" link2="meca_axis_6_link_B" reason="Adjacent" />
     <disable_collisions link1="meca_axis_5_link_B" link2="meca_base_link_A" reason="Never" />
     <disable_collisions link1="meca_axis_4_link_B" link2="two_finger_gripper" reason="Never" />
@@ -232,7 +217,7 @@
     <disable_collisions link1="meca_base_link_A" link2="rotary_table_stator" reason="Never" />
     <disable_collisions link1="meca_base_link_A" link2="stuff_on_top_A" reason="Adjacent" />
     <disable_collisions link1="meca_base_link_A" link2="two_finger_gripper" reason="Never" />
-    <disable_collisions link1="meca_base_link_B" link2="rotary_table_stator" reason="Never" />
+    <disable_collisions link1="meca_base_link_B" link2="rotary_table_stator" reason="Default" />
     <disable_collisions link1="meca_base_link_B" link2="stuff_on_top_A" reason="Never" />
     <disable_collisions link1="meca_base_link_B" link2="vacuum_gripper" reason="Never" />
     <disable_collisions link1="rotary_table_stator" link2="stuff_on_top_A" reason="Never" />
