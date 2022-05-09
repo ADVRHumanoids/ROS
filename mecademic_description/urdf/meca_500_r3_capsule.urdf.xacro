@@ -507,7 +507,7 @@
     </inertial>
   </link>
   <joint name="vacum_gripper_to_ee_A_joint" type="fixed">
-    <origin rpy="0.0 0.0 0.0" xyz="0.015 0.0087 -0.0323"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.015 0.0 -0.0323"/>
     <parent link="vacuum_gripper"/>
     <child link="ee_link_A"/>
   </joint>
