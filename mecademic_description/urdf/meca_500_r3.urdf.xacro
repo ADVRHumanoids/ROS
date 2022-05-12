@@ -398,7 +398,7 @@
   </link>
 
   <joint name="vacum_gripper_to_ee_A_joint" type="fixed">
-    <origin xyz="0.015 0. -0.0323" rpy="0 0 0" />
+    <origin xyz="0.015 0. -0.0671" rpy="0 0 0" />
     <parent link="vacuum_gripper" />
     <child link="ee_link_A" />
   </joint>
