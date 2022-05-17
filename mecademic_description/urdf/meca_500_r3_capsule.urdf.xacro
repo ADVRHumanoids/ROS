@@ -557,19 +557,19 @@
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.105"/>
       <geometry>
-        <cylinder length="0.21" radius="0.145"/>
+        <cylinder length="0.21" radius="0.135"/>
       </geometry>
     </collision>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 0.000000"/>
       <geometry>
-        <sphere radius="0.145"/>
+        <sphere radius="0.135"/>
       </geometry>
     </collision>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.000000 0.000000 0.210000"/>
       <geometry>
-        <sphere radius="0.145"/>
+        <sphere radius="0.135"/>
       </geometry>
     </collision>
   </link>
