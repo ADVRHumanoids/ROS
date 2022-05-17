@@ -139,7 +139,7 @@
     <axis xyz="1.0 0.0 0.0"/>
     <parent link="linear_motor_stator"/>
     <child link="L_1_A"/>
-    <limit effort="100.0" lower="-0.002" upper="0.450" velocity="0.5"/>
+    <limit effort="100.0" lower="-0.002" upper="0.45" velocity="0.5"/>
   </joint>
   <link name="L_1_A">
     <inertial>
@@ -209,7 +209,7 @@
     </collision>
   </link>
   <joint name="stuff_on_top_A_to_meca_base_link_A" type="fixed">
-    <origin rpy="0 1.571 1.571" xyz="0.05 0.061 0.0705"/>
+    <origin rpy="0.0 1.571 1.571" xyz="0.05 0.061 0.0705"/>
     <parent link="stuff_on_top_A"/>
     <child link="meca_base_link_A"/>
   </joint>
@@ -473,25 +473,25 @@
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://mecademic_description/meshes/pneumatic_tube_holder_mesh_v2.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mecademic_description/meshes/for_mesh_pneumatic_tube_holder_new_v5.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="4.35637496773e-05 -0.0111409793996 -2.42673928992e-07" xyz="0.0127944 8.22252e-07 -0.00216735"/>
+      <origin rpy="0.000369675884525 -0.00595860855088 -1.10138021455e-06" xyz="0.01273105 -7.811225e-05 -0.03211868"/>
       <geometry>
-        <cylinder length="0.052940785559" radius="0.0217467"/>
+        <cylinder length="0.0836945315022" radius="0.0220478"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="4.35637496773e-05 -0.0111409793996 -2.42673928992e-07" xyz="0.013089 0.000002 -0.028636"/>
+      <origin rpy="0.000369675884525 -0.00595860855088 -1.10138021455e-06" xyz="0.012980 -0.000063 -0.073965"/>
       <geometry>
-        <sphere radius="0.0217467"/>
+        <sphere radius="0.0220478"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="4.35637496773e-05 -0.0111409793996 -2.42673928992e-07" xyz="0.012500 -0.000000 0.024301"/>
+      <origin rpy="0.000369675884525 -0.00595860855088 -1.10138021455e-06" xyz="0.012482 -0.000094 0.009728"/>
       <geometry>
-        <sphere radius="0.0217467"/>
+        <sphere radius="0.0220478"/>
       </geometry>
     </collision>
   </link>
@@ -512,7 +512,7 @@
     <child link="ee_link_A"/>
   </joint>
   <joint name="world_to_base_B" type="fixed">
-    <origin xyz="0.4521 1.0047 0.050" rpy="0 0 -1.571"/>
+    <origin rpy="0.0 0.0 -1.571" xyz="0.4521 1.0047 0.05"/>
     <parent link="world"/>
     <child link="base_link_B"/>
   </joint>
@@ -937,13 +937,17 @@
     <child link="ee_link_B"/>
   </joint>
   <joint name="world_to_buffer" type="fixed">
-   <origin xyz="0 0.670 0.075" rpy="0 0 0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.67 0.075"/>
     <parent link="world"/>
     <child link="buffer_base_link"/>
   </joint>
   <link name="buffer_base_link">
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
     <visual>
-      <origin xyz="0 0.0 0.0" rpy="1.57 0 -1.57" />
+      <origin rpy="1.57 0.0 -1.57" xyz="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="package://mecademic_description/meshes/buffer_and_slide_support_v17.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -960,20 +964,19 @@
     </inertial>
   </link>
   <joint name="buffer_base_to_1" type="fixed">
-    <origin xyz="0.525 -0.065 0.03" rpy="0 0 0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.525 -0.065 0.03"/>
     <parent link="buffer_base_link"/>
     <child link="buffer_1"/>
   </joint>
   <link name="buffer_1"/>
   <joint name="buffer_base_to_2" type="fixed">
-        <origin xyz="0.650 -0.065 0.03" rpy="0 0 0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.65 -0.065 0.03"/>
         <parent link="buffer_base_link"/>
         <child link="buffer_2"/>
       </joint>
-
   <link name="buffer_2"/>
   <joint name="world_to_mill" type="fixed">
-    <origin xyz="0.8154 0.82 0.0" rpy="0 0 0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.8154 0.82 0.0"/>
     <parent link="world"/>
     <child link="mill_base_link"/>
   </joint>
@@ -984,62 +987,34 @@
     <child link="mill_stick"/>
   </joint>
   <link name="mill_stick"/>
-
   <joint name="mill_base_to_buffer" type="fixed">
-    <origin xyz="0.0 0 0.15" rpy="0 0 0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.15"/>
     <parent link="mill_base_link"/>
     <child link="mill_buffer"/>
   </joint>
-
   <link name="mill_buffer"/>
-
-  <!-- SLIDERS -->
   <joint name="world_to_slider" type="fixed">
-    <origin xyz="0 0.670 0.0" rpy="0 0 0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.67 0.0"/>
     <parent link="world"/>
     <child link="slider_base_link"/>
   </joint>
   <link name="slider_base_link"/>
   <joint name="slider_base_to_empty" type="fixed">
-    <origin xyz="0.397 -0.065 0.194" rpy="0 0.1745 0"/>
+    <origin rpy="0.0 0.1745 0.0" xyz="0.397 -0.065 0.194"/>
     <parent link="slider_base_link"/>
     <child link="empty_container"/>
   </joint>
   <link name="empty_container"/>
   <joint name="sliders_base_to_lid" type="fixed">
-    <origin xyz="0.322 -0.065 0.319" rpy="0 0.1745 0"/>
+    <origin rpy="0.0 0.1745 0.0" xyz="0.322 -0.065 0.319"/>
     <parent link="slider_base_link"/>
     <child link="lid"/>
   </joint>
   <link name="lid"/>
   <joint name="sliders_base_to_full" type="fixed">
-    <origin xyz="0.809 -0.065 0.295" rpy="0 0.1745 0"/>
+    <origin rpy="0.0 0.1745 0.0" xyz="0.809 -0.065 0.295"/>
     <parent link="slider_base_link"/>
     <child link="full_container"/>
   </joint>
   <link name="full_container"/>
-
-
-  <!-- <joint name="world_to_floor" type="fixed">
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.05"/>
-    <parent link="world"/>
-    <child link="floor_link"/>
-  </joint>
-  <link name="floor_link">
-    <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <geometry>
-        <box size="2.0 2.0 0.0"/>
-      </geometry>
-      <material name="grey">
-        <color rgba="0.232 0.232 0.232 1.0"/>
-      </material>
-    </visual>
-    <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <geometry>
-        <box size="2.0 2.0 0.0"/>
-      </geometry>
-    </collision>
-  </link> -->
 </robot>

@@ -368,13 +368,13 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://mecademic_description/meshes/pneumatic_tube_holder_mesh_v2.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mecademic_description/meshes/for_mesh_pneumatic_tube_holder_new_v5.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://mecademic_description/meshes/pneumatic_tube_holder_mesh_v2.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mecademic_description/meshes/for_mesh_pneumatic_tube_holder_new_v5.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     <inertial>
