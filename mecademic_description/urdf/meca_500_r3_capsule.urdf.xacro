@@ -139,7 +139,7 @@
     <axis xyz="1.0 0.0 0.0"/>
     <parent link="linear_motor_stator"/>
     <child link="L_1_A"/>
-    <limit effort="100.0" lower="-0.002" upper="0.4" velocity="0.5"/>
+    <limit effort="100.0" lower="-0.002" upper="0.450" velocity="0.5"/>
   </joint>
   <link name="L_1_A">
     <inertial>
