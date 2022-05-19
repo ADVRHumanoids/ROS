@@ -834,7 +834,7 @@
   <link name="slider_base_link"/>   
 
   <joint name="slider_base_to_empty" type="fixed">
-    <origin xyz="0.364 -0.065 0.160" rpy="0 0.349 0"/>
+    <origin xyz="0.364 -0.065 0.160" rpy="0 0.314 0"/>
     <parent link="slider_base_link"/>
     <child link="empty_container"/>
   </joint>
@@ -842,7 +842,7 @@
   <link name="empty_container"/>
 
   <joint name="sliders_base_to_lid" type="fixed">
-        <origin xyz="0.276 -0.065 0.293" rpy="0 0.349 0"/>
+        <origin xyz="0.276 -0.065 0.293" rpy="0 0.314 0"/>
         <parent link="slider_base_link"/>
         <child link="lid"/>
       </joint>
@@ -850,7 +850,7 @@
   <link name="lid"/>
 
   <joint name="sliders_base_to_full" type="fixed">
-        <origin xyz="0.822 -0.065 0.287" rpy="0 0.349 0"/>
+        <origin xyz="0.822 -0.065 0.287" rpy="0 0.314 0"/>
         <parent link="slider_base_link"/>
         <child link="full_container"/>
       </joint>
