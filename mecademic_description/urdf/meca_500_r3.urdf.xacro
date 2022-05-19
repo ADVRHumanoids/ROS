@@ -766,15 +766,15 @@
   
   <link name="buffer_base_link">
     <visual>
-      <origin xyz="0 0.0 0.0" rpy="1.57 0 -1.57" />
+      <origin xyz="0 0.0 0.0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://mecademic_description/meshes/buffer_and_slide_support_v17.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mecademic_description/meshes/for_mesh_buffer_and_input_slide_support_new_v21.stl" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0.0 0.0" rpy="1.57 0 -1.57" />
+      <origin xyz="0 0.0 0.0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://mecademic_description/meshes/buffer_and_slide_support_v17.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mecademic_description/meshes/for_mesh_buffer_and_input_slide_support_new_v21.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
