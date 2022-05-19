@@ -949,13 +949,13 @@
     <visual>
       <origin rpy="0 0.0 0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://mecademic_description/meshes/for_mesh_buffer_and_input_slide_support_new_v21.stl" scale="1 1 1"/>
+        <mesh filename="package://mecademic_description/meshes/for_mesh_buffer_and_input_slide_support_new_v6.stl" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0.0 0.0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://mecademic_description/meshes/for_mesh_buffer_and_input_slide_support_new_v21.stl" scale="1 1 1"/>
+        <mesh filename="package://mecademic_description/meshes/for_mesh_buffer_and_input_slide_support_new_v6.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
@@ -993,11 +993,6 @@
     <child link="mill_buffer"/>
   </joint>
   <link name="mill_buffer"/>
-  <joint name="world_to_slider" type="fixed">
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.67 0.0"/>
-    <parent link="world"/>
-    <child link="slider_base_link"/>
-  </joint>
 
   <joint name="world_to_slider" type="fixed">
     <origin xyz="0 0.670 0.0" rpy="0 0 0"/>
@@ -1008,7 +1003,7 @@
   <link name="slider_base_link"/>   
 
   <joint name="slider_base_to_empty" type="fixed">
-    <origin xyz="0.354 -0.065 0.165" rpy="0 0.349 0"/>
+    <origin xyz="0.364 -0.065 0.160" rpy="0 0.349 0"/>
     <parent link="slider_base_link"/>
     <child link="empty_container"/>
   </joint>
@@ -1016,7 +1011,7 @@
   <link name="empty_container"/>
 
   <joint name="sliders_base_to_lid" type="fixed">
-        <origin xyz="0.303 -0.065 0.310" rpy="0 0.349 0"/>
+        <origin xyz="0.276 -0.065 0.293" rpy="0 0.349 0"/>
         <parent link="slider_base_link"/>
         <child link="lid"/>
       </joint>
