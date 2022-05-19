@@ -937,7 +937,7 @@
     <child link="ee_link_B"/>
   </joint>
   <joint name="world_to_buffer" type="fixed">
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.67 0.075"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.67 0.080"/>
     <parent link="world"/>
     <child link="buffer_base_link"/>
   </joint>
