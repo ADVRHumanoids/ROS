@@ -998,23 +998,36 @@
     <parent link="world"/>
     <child link="slider_base_link"/>
   </joint>
-  <link name="slider_base_link"/>
+
+  <joint name="world_to_slider" type="fixed">
+    <origin xyz="0 0.670 0.0" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="slider_base_link"/>
+  </joint>
+  
+  <link name="slider_base_link"/>   
+
   <joint name="slider_base_to_empty" type="fixed">
-    <origin rpy="0.0 0.1745 0.0" xyz="0.397 -0.065 0.194"/>
+    <origin xyz="0.354 -0.065 0.165" rpy="0 0.349 0"/>
     <parent link="slider_base_link"/>
     <child link="empty_container"/>
   </joint>
+
   <link name="empty_container"/>
+
   <joint name="sliders_base_to_lid" type="fixed">
-    <origin rpy="0.0 0.1745 0.0" xyz="0.322 -0.065 0.319"/>
-    <parent link="slider_base_link"/>
-    <child link="lid"/>
-  </joint>
+        <origin xyz="0.303 -0.065 0.310" rpy="0 0.349 0"/>
+        <parent link="slider_base_link"/>
+        <child link="lid"/>
+      </joint>
+
   <link name="lid"/>
+
   <joint name="sliders_base_to_full" type="fixed">
-    <origin rpy="0.0 0.1745 0.0" xyz="0.809 -0.065 0.295"/>
-    <parent link="slider_base_link"/>
-    <child link="full_container"/>
-  </joint>
+        <origin xyz="0.822 -0.065 0.287" rpy="0 0.349 0"/>
+        <parent link="slider_base_link"/>
+        <child link="full_container"/>
+      </joint>
+
   <link name="full_container"/>
 </robot>
