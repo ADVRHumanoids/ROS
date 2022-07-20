@@ -54,7 +54,7 @@
     </inertial>
   </link>
 
-  <joint name="fixed_gear_box" type="fixed">
+  <!-- <joint name="fixed_gear_box" type="fixed">
     <parent link="base_link_A"/>
     <child link="gear_box"/>
     <origin xyz="0.927 0.07 0.08" rpy="0 0 1.571" />
@@ -81,7 +81,7 @@
       <mass value="2.0554934"/>
       <inertia ixx="0.01068855" ixy="-1.14168e-05" ixz="2.71689e-06" iyy="0.010584907" iyz="8.76312e-05" izz="0.0032026258"/>
     </inertial>
-  </link>
+  </link> -->
 
   <joint name="fixed_linear_motor" type="fixed">
     <parent link="base_link_A"/>
@@ -758,7 +758,7 @@
   
 
   <!-- BUFFERS -->
-  <joint name="world_to_buffer" type="fixed">
+  <!-- <joint name="world_to_buffer" type="fixed">
      <origin xyz="0 0.670 0.080" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="buffer_base_link"/>
@@ -797,10 +797,10 @@
         <child link="buffer_2"/>
       </joint>
 
-  <link name="buffer_2"/>
+  <link name="buffer_2"/> -->
 
   <!-- CANDY MILL -->
-  <joint name="world_to_mill" type="fixed">
+  <!-- <joint name="world_to_mill" type="fixed">
     <origin xyz="0.8154 0.82 0.0" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="mill_base_link"/>
@@ -822,10 +822,10 @@
     <child link="mill_buffer"/>
   </joint>
 
-  <link name="mill_buffer"/>
+  <link name="mill_buffer"/> -->
 
   <!-- SLIDERS -->
-  <joint name="world_to_slider" type="fixed">
+  <!-- <joint name="world_to_slider" type="fixed">
     <origin xyz="0 0.670 0.0" rpy="0 0 0"/>
     <parent link="world"/>
     <child link="slider_base_link"/>
@@ -855,7 +855,7 @@
         <child link="full_container"/>
       </joint>
 
-  <link name="full_container"/>
+  <link name="full_container"/> -->
 
   <!-- FLOOR -->
   <!-- <joint name="world_to_floor" type="fixed">

@@ -50,7 +50,7 @@
       <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
   </link>
-  <joint name="fixed_gear_box" type="fixed">
+  <!-- <joint name="fixed_gear_box" type="fixed">
     <origin rpy="0.0 0.0 1.571" xyz="0.927 0.07 0.08"/>
     <parent link="base_link_A"/>
     <child link="gear_box"/>
@@ -88,7 +88,7 @@
         <sphere radius="0.065"/>
       </geometry>
     </collision>
-  </link>
+  </link> -->
   <joint name="fixed_linear_motor" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
     <parent link="base_link_A"/>
@@ -106,7 +106,7 @@
         <mesh filename="package://mecademic_description/meshes/linear_guide_base_meters.stl"/>
       </geometry>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin rpy="2.2937756802 1.5707939573 2.29377390347" xyz="0.49 0.05430915 0.05892555"/>
       <geometry>
         <cylinder length="0.956812000003" radius="0.081078"/>
@@ -123,7 +123,7 @@
       <geometry>
         <sphere radius="0.081078"/>
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <gazebo reference="linear_motor_stator">
     <mu1>0.2</mu1>
@@ -153,7 +153,7 @@
         <mesh filename="package://mecademic_description/meshes/linear_guide_mover_meters.stl"/>
       </geometry>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin rpy="0.0 1.57079632679 1.60984711283e-14" xyz="0.0 1.35033e-10 0.0098086"/>
       <geometry>
         <cylinder length="0.1242354" radius="0.114543"/>
@@ -170,7 +170,7 @@
       <geometry>
         <sphere radius="0.114543"/>
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint name="L_1_A_to_stuff_on_top_A" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0355"/>
@@ -189,7 +189,7 @@
         <mesh filename="package://mecademic_description/meshes/pump_and_robot_mount_metres_even_lower_quality.stl"/>
       </geometry>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin rpy="-1.62917422953 1.38891587263 -1.44663604517" xyz="-0.01940155 -0.01246106 0.07044685"/>
       <geometry>
         <cylinder length="0.0846839364147" radius="0.111533"/>
@@ -206,7 +206,7 @@
       <geometry>
         <sphere radius="0.111533"/>
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint name="stuff_on_top_A_to_meca_base_link_A" type="fixed">
     <origin rpy="0.0 1.571 1.571" xyz="0.05 0.061 0.0705"/>
@@ -512,7 +512,7 @@
     <child link="ee_link_A"/>
   </joint>
   <joint name="world_to_base_B" type="fixed">
-    <origin rpy="0.0 0.0 -1.571" xyz="0.4521 1.0047 0.05"/>
+    <origin rpy="0.0 0.0 -1.571" xyz="0.5 0.8 0.05"/>
     <parent link="world"/>
     <child link="base_link_B"/>
   </joint>
@@ -554,7 +554,7 @@
       </geometry>
       <material name="grey"/>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.105"/>
       <geometry>
         <cylinder length="0.21" radius="0.135"/>
@@ -571,7 +571,7 @@
       <geometry>
         <sphere radius="0.135"/>
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <gazebo reference="rotary_table_stator">
     <mu1>0.2</mu1>
@@ -602,7 +602,7 @@
       </geometry>
       <material name="grey"/>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.002"/>
       <geometry>
         <cylinder length="0.004" radius="0.063"/>
@@ -619,7 +619,7 @@
       <geometry>
         <sphere radius="0.063"/>
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint name="fixed_L_1_B_rotor_fast" type="fixed">
     <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -936,7 +936,7 @@
     <parent link="two_finger_gripper"/>
     <child link="ee_link_B"/>
   </joint>
-  <joint name="world_to_buffer" type="fixed">
+  <!-- <joint name="world_to_buffer" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.67 0.080"/>
     <parent link="world"/>
     <child link="buffer_base_link"/>
@@ -1024,5 +1024,5 @@
         <child link="full_container"/>
       </joint>
 
-  <link name="full_container"/>
+  <link name="full_container"/> -->
 </robot>
